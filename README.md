@@ -1,25 +1,24 @@
-# Preact Simple Starter
-**It's highly recommended to use [Preact-CLI](https://github.com/developit/preact-cli)**
+[![Build Status](https://travis-ci.org/ooade/fetch-gifs.svg?branch=master)](https://travis-ci.org/ooade/fetch-gifs)
+[![Coverage Status](https://coveralls.io/repos/github/dskline/portfolio/badge.svg?branch=master)](https://coveralls.io/github/dskline/portfolio?branch=master)
+[![Code Climate Badge](https://codeclimate.com/github/ooade/PreactSimpleStarter/badges/gpa.svg)](https://codeclimate.com/github/ooade/PreactSimpleStarter/badges)
 
-[![Build Status](https://travis-ci.org/ooade/fetch-gifs.svg?branch=master)](https://travis-ci.org/ooade/fetch-gifs) [![Code Climate Badge](https://codeclimate.com/github/ooade/PreactSimpleStarter/badges/gpa.svg)](https://codeclimate.com/github/ooade/PreactSimpleStarter/badges)
+Yet Another Portfolio Application. Allows me to play with some of the latest and greatest web technologies: 
 
-PWA Simple Starter with Preact, Webpack 2 and your favorite React related packages :rocket:
-
-This App uses:
-  - Preact
-  - Preact-mdl
-  - React-Router
+  - React (actually Preact)
   - Redux
-  - React-Helmet
+  - GraphQL
   - Sass
-  - Webpack Dashboard(For Bundle Analysis)
+  - Webpack
+  - Service Workers
 
-JS Build files:
- - app.js - 78.6kb (17kb gzipped)
- - vendor.js - 46.3kb (12.5kb gzipped)
+My main technical goals with this web application are as follows:
 
-<img src='lh.png' />
-_100/100 on lighthouse 1.4.1 audits_
+- Be static, to minimize costs.
+- Have a consistent design that works on all devices/screen sizes.
+- Work offline using service workers/caching.
+- Easy to develop and maintain (babel transpiling, live-reload, Sass)
+- 95+% test coverage.
+- Aim for a 100/100 score on [Lighthouse](https://developers.google.com/web/tools/lighthouse/).  
 
 # Quick-Start Guide
 
@@ -31,50 +30,34 @@ _100/100 on lighthouse 1.4.1 audits_
 **1. Clone this repo:**
 
 ```sh
-git clone https://github.com/ooade/PreactSimpleStarter.git
-cd PreactSimpleStarter
+git clone https://github.com/dskline/portfolio.git
+cd portfolio
 ```
 
-
-**2. Make it your own:**
-
-```sh
-rm -rf .git && git init && yarn init
-```
-
-> :information_source: This re-initializes the repo and sets up your yarn project.
-
-
-**3. Install the dependencies:**
+**2. Install the dependencies:**
 
 ```sh
 yarn install
 ```
 
-> You're done installing! Now let's get started developing.
-
-
 
 ## Development Workflow
 
 
-**4. Start a live-reload development server:**
+**3. Start a live-reload development server:**
 
 ```sh
 yarn run dev
 ```
 
-> This is a full web server nicely suited to your project. Any time you make changes within the `src` directory, it will rebuild and even refresh your browser.
+> Most changes made to /src while the dev server is running will be updated immediately.
 
-> :information_source: Try to avoid using Service Worker in your development environment, so you won't need to hard reload the page anytime you make a change.
-
-**5. Generate a production build in `./build`:**
+**4. Generate a production build in `./build`:**
 
 ```sh
 yarn run build
 ```
-
-You can now deploy the contents of the `build` directory to production!
+> Try to avoid using Service Worker in your development environment, otherwise you'll need to hard reload the page any time you make a change.
 
 ## License
 
