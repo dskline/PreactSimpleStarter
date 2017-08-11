@@ -1,6 +1,4 @@
-import { h } from 'preact';
-import { Button } from 'preact-mdl';
-import { Link } from 'preact-router';
-import Todo from './Todo';
+import { h } from 'preact'
+import Todo from './Todo'
 
-export default () => <Todo />;
+export default () => <Todo />
