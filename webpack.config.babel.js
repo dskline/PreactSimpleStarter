@@ -13,7 +13,7 @@ const ENV = process.env.NODE_ENV || 'development'
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: ['babel-polyfill', './src/index.js'],
     vendor: ['preact', 'preact-router', 'redux', 'preact-mdl']
   },
 
@@ -49,7 +49,14 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loaders: [{
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            presets: ['env', 'stage-0'],
+            plugins: ['transform-async-to-generator', 'transform-decorators-legacy']
+          }
+        }],
         include: [
           path.resolve('src'),
           path.resolve('node_modules/preact-compat/src')
@@ -79,7 +86,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      title: 'Preact Simple Starter',
+      title: 'Spencer Kline\'s Homepage',
       removeRedundantAttributes: true,
       inject: false,
       manifest: `${ENV === 'production' ? 'manifest.json' : '/assets/manifest.json'}`,

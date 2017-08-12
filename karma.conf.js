@@ -8,16 +8,24 @@ webpack.plugins.splice(commonsChunkPluginIndex, 1)
 
 webpack.module.rules.push(
   {
-    test: /\.js$/,
+    test: /test\/.*\.spec\.js$/,
     exclude: [
       path.resolve('node_modules/')
     ],
-    loader: 'babel-loader'
+    loaders: [{
+      loader: 'babel-loader',
+      options: {
+        cacheDirectory: true,
+        presets: ['env', 'stage-0'],
+        plugins: ['transform-async-to-generator', 'transform-decorators-legacy']
+      }
+    }]
   },
   {
-    test: /\.js?$/,
-    loader: 'isparta-loader',
-    include: path.resolve('src/')
+    test: /\.js$|\.jsx$/,
+    enforce: 'post',
+    use: { loader: 'istanbul-instrumenter-loader', options: { esModules: true } },
+    exclude: /node_modules|\.spec\.js$/
   }
 )
 

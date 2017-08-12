@@ -1,11 +1,23 @@
 {
-  "sourceMaps": true,
   "presets": [
-    "es2015",
+    [ "env", {
+      "targets": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      },
+      "debug": true
+    }],
     "stage-0"
   ],
   "plugins": [
     ["transform-decorators-legacy"],
     ["transform-react-jsx", { "pragma": "h" }]
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["istanbul"]
+    }
+  },
+  "sourceMaps": true
 }

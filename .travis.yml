@@ -15,10 +15,3 @@ script:
 
 after_success:
   - cat ./coverage/lcov.info | node node_modules/.bin/coveralls
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  on:
-    branch: master
