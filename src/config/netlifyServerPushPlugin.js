@@ -11,7 +11,7 @@ function NetlifyServerPushPlugin (options) {
 NetlifyServerPushPlugin.prototype.generateAssetHeaders = function (assets) {
   // Turn script files into script tags
   const scriptHeaders = assets.js.map(path => `  Link: ${path}; rel=preload; as=script`)
-  const styleHeaders = assets.css.map(path => `  Link: ${path}; rel=preload; as=stylesheet`)
+  const styleHeaders = assets.css.map(path => `  Link: ${path}; rel=preload; as=style`)
   return `/*
 ${scriptHeaders.concat(styleHeaders).join('\n')}
 `
