@@ -148,18 +148,6 @@ module.exports = {
             { from: './src/assets/manifest.json', to: './' },
             { from: './src/assets/img', to: './img' }
           ]),
-          new OfflinePlugin({
-            relativePaths: false,
-            publicPath: '/',
-            updateStrategy: 'all',
-            safeToUseOptionalCaches: true,
-            caches: 'all',
-            ServiceWorker: {
-              navigateFallbackURL: '/',
-              events: true
-            },
-            AppCache: false
-          }),
           new HtmlCriticalWebpackPlugin({
             base: path.join(path.resolve(__dirname), 'build/'),
             src: 'index.html',
@@ -200,7 +188,20 @@ module.exports = {
           }),
           new NetlifyServerPushPlugin({
             headersFile: '_headers'
-          })
+          }),
+          new OfflinePlugin({
+            relativePaths: false,
+            publicPath: '/',
+            updateStrategy: 'all',
+            safeToUseOptionalCaches: true,
+            caches: 'all',
+            ServiceWorker: {
+              navigateFallbackURL: '/',
+              events: true
+            },
+            AppCache: false,
+            excludes: ['**/.*', '_headers'],
+          }),
         ]
         : []
     ),
