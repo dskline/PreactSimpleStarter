@@ -9,6 +9,7 @@ import ManifestPlugin from 'webpack-manifest-plugin'
 import OfflinePlugin from 'offline-plugin'
 import Dashboard from 'webpack-dashboard/plugin'
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin'
+import NetlifyServerPushPlugin from './src/config/netlifyServerPushPlugin'
 
 const ENV = process.env.NODE_ENV || 'development'
 
@@ -33,8 +34,7 @@ module.exports = {
   resolve: {
     extensions: ['.js'],
     alias: {
-      react: 'preact-compat',
-      'react-dom': 'preact-compat',
+      react: 'preact-compat', 'react-dom': 'preact-compat',
       src: path.resolve(__dirname, 'src/')
     }
   },
@@ -70,9 +70,6 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
-        // loader: ExtractTextPlugin.extract(
-        //   'css-loader?sourceMap&modules!postcss-loader?sourceMap!sass-loader?sourceMap'
-        // )
         use: extractSass.extract({
           use: [{
             loader: 'css-loader',
@@ -105,12 +102,12 @@ module.exports = {
   },
 
   plugins: [
+    extractSass,
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: Infinity
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    extractSass,
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(ENV),
       'GC_AUTH_TOKEN': JSON.stringify(ENV === 'production'
@@ -200,6 +197,9 @@ module.exports = {
             test: /\.js$|\.css$|\.html$/,
             threshold: 10240,
             minRatio: 0.8
+          }),
+          new NetlifyServerPushPlugin({
+            headersFile: '_headers'
           })
         ]
         : []

@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "www.spencerkline.com",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dashboard -- webpack-dev-server",
@@ -13,10 +13,9 @@
   "keywords": [
     "preact",
     "react",
-    "preact-compat",
-    "redux",
     "sass",
-    "yarn"
+    "babel",
+    "tachyons"
   ],
   "license": "MIT",
   "author": "Spencer Kline <dskline1@gmail.com>",
