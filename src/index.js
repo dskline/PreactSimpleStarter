@@ -1,20 +1,20 @@
 import { h, render } from 'preact'
-import { Provider } from 'preact-redux'
 import { Router } from 'preact-router'
-import App from './components/App'
-import ErrorPage from './components/404'
 
-import store from './store'
-import 'material-design-lite/material'
-import './style/index.scss'
+import HomePage from './pages/HomePage'
+import BlogPage from './pages/BlogPage'
 
 // Load offline plugin only on production
-process.env.NODE_ENV === 'production' && require('./offline')
+if (process.env.NODE_ENV === 'production') {
+  require('./offline')
+} else {
+  require('preact/devtools')
+}
 
 render(
-  <Provider store={store}>
-    <Router>
-      <App path='/' />
-      <ErrorPage default />
-    </Router>
-  </Provider>, document.body)
+  <Router>
+    <BlogPage path='/blog/:titleHtml' />
+    <BlogPage path='/blog' />
+    <HomePage default />
+  </Router>, document.body
+)

@@ -1,0 +1,73 @@
+@include media($breakpoint-small...) {
+  #hamburger-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 29px;
+
+    div.hamburger-piece {
+      width: 100%;
+      height: 5px;
+      z-index: 3;
+
+      background: white;
+      border-radius: 3px;
+
+      transform-origin: 4px 0;
+
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+      opacity 0.55s ease;
+    }
+    div.hamburger-piece:first-child {
+      transform-origin: 0 0;
+    }
+    div.hamburger-piece:last-child {
+      transform-origin: 0 100%;
+    }
+
+    #hamburger-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 90px;
+      height: 12vw;
+      margin: 0;
+
+      opacity: 0; /* hide this */
+      z-index: 4; /* and place it over the hamburger */
+
+      cursor: pointer;
+      -webkit-touch-callout: none;
+    }
+    #hamburger-overlay:checked + div.hamburger-piece {
+      transform: rotate(45deg);
+    }
+    #hamburger-overlay:checked ~ div.hamburger-piece:nth-of-type(2n) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    #hamburger-overlay:checked ~ div.hamburger-piece:nth-of-type(3n) {
+      transform: rotate(-45deg);
+    }
+  }
+
+  #dismiss-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+  }
+  #dismiss-menu-overlay:not(:checked) {
+    left: -100vw;
+  }
+  #dismiss-menu-overlay:checked ~ #navbar-link-container {
+    right: -$sliding-menu-width;
+  }
+}

@@ -1,0 +1,13 @@
+@include media($breakpoint-not-small...) {
+  #menu-bar {
+    height: 3rem;
+
+    a {
+      color: rgb(221, 216, 208);
+
+      &.active {
+        color: white;
+      }
+    }
+  }
+}

@@ -1,8 +1,10 @@
-[![Build Status](https://travis-ci.org/ooade/fetch-gifs.svg?branch=master)](https://travis-ci.org/ooade/fetch-gifs)
-[![Coverage Status](https://coveralls.io/repos/github/dskline/portfolio/badge.svg?branch=master)](https://coveralls.io/github/dskline/portfolio?branch=master)
-[![Code Climate Badge](https://codeclimate.com/github/ooade/PreactSimpleStarter/badges/gpa.svg)](https://codeclimate.com/github/ooade/PreactSimpleStarter/badges)
+# Yet Another Portfolio PWA
 
-Yet Another Portfolio Application. Allows me to play with some of the latest and greatest web technologies: 
+[![Build Status](https://travis-ci.org/dskline/portfolio.svg?branch=master)](https://travis-ci.org/dskline/portfolio)
+[![Coverage Status](https://coveralls.io/repos/github/dskline/portfolio/badge.svg?branch=master)](https://coveralls.io/github/dskline/portfolio?branch=master)
+[![Code Climate Badge](https://codeclimate.com/github/dskline/portfolio/badges/gpa.svg)](https://codeclimate.com/github/dskline/portfolio/badges)
+
+This open source project was created to allow me to play with some of the latest and greatest web technologies: 
 
   - React (actually Preact)
   - Redux

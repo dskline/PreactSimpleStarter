@@ -1,0 +1,22 @@
+@import '~include-media/dist/include-media';
+
+//:export {
+//  maxPhoneWidth: $breakpoint-small;
+//}
+
+#home-page-banner {
+  overflow: hidden;
+  width: 100vw;
+
+  &.loading {
+    background: $background-svg;
+  }
+  @include media($breakpoint-small...) {
+    height: 133.33vw;
+    background: url(https://res.cloudinary.com/spencerkline/image/upload/f_auto,w_auto/a_270/hero_portrait.jpg) round;
+  }
+  @include media($breakpoint-not-small...) {
+    height: 75vw;
+    background: url(https://res.cloudinary.com/spencerkline/image/upload/f_auto,w_auto/hero_landscape.jpg) round;
+  }
+}

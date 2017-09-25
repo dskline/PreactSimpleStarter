@@ -5,9 +5,9 @@ import {} from 'src'
 import App from 'src/components/App'
 import Todo from 'src/components/Todo'
 import TodoItem from 'src/components/TodoItem'
-import ErrorPage from 'src/components/404'
+import ErrorPage from 'src/pages/404'
 
-import store from 'src/store'
+import store from 'src/dao/store'
 
 function connect (WrappedComponent, ...props) {
   return (
