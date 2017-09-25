@@ -34,7 +34,8 @@ module.exports = {
   resolve: {
     extensions: ['.js'],
     alias: {
-      react: 'preact-compat', 'react-dom': 'preact-compat',
+      react: 'preact-compat',
+      'react-dom': 'preact-compat',
       src: path.resolve(__dirname, 'src/')
     }
   },
@@ -154,7 +155,6 @@ module.exports = {
             dest: 'index.html',
             inline: true,
             minify: true,
-            extract: true,
             ignore: [/url\(http/],
             dimensions: [{
               // iPhone 6
@@ -200,8 +200,8 @@ module.exports = {
               events: true
             },
             AppCache: false,
-            excludes: ['**/.*', '_headers'],
-          }),
+            excludes: ['**/.*', '_headers']
+          })
         ]
         : []
     ),
