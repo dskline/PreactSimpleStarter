@@ -1,17 +1,21 @@
-sudo: false
-
 language: node_js
-
 node_js:
-  - 'stable'
-
+  - stable
+dist: trusty
+sudo: false
+addons:
+  chrome: stable
 cache:
   directories:
     - node_modules
-
 script:
-  - npm run build
   - npm test
-
 after_success:
   - cat ./coverage/lcov.info | node node_modules/.bin/coveralls
+before_deploy:
+  - npm run build
+deploy:
+  provider: firebase
+  skip_cleanup: true
+  token:
+    secure: "svoKl8pGNObRo2LPkDqsH8W26QGd54mvyKkgXv1Dv9HCit2bZ4rdVAxbseL79Lw7d0NHE7xfTz5lqPp/3MqthfLrv9w9htFTJTgSyEKyLJuY//3vlwbnEEz2Z/iGZCjVm2G+yS30+IaecPAreh4BEzxCObIjsmLPzdVLSPP6d7bdsX5yFM/BNpOg9qpmfzoMbKzfIeGHvONzMMYbX8IPnbaem5uINzw/bON6y44OFUlm9aZ9ZF6ijDsG2MrCmvuC3fBZeWZVztsztBvF/+ocapdKOHO+diBzBAAldkrmm5WPUCQUy16xcaIl1wMUvWLinDOVpoKyeJaE96pUUEa+zia7zLlcwAya4YNIN2MGxyZ/wslHSPLIga/8mtsQOU79Bv8/2eazLOQBZ1qDLa4P2Qwx2qGomti0xAGq4JhSPxj/DV+naeuriPt8UVjlO1T5a9GdI1POyhtNFh9IyZXzu2Fm3ieJi24D0nDBQ2ieBDg0It3/1pYutKW9kvbaIJcEhY35q3uEjgnT8+EXw/gBck8bkJTmD8MY6pTlfMSaRakDrA9PBKdv6L+Xwi5kL2/iaPctphXOWNqMWplo+fFjMPUws/A2k58rBgxKv4dYGfxjNWDuWXYyXsoCCNbn640aiyZMpyU8V4+hoyReLL8fYG5ZrZlCjrRO5AvU1kKlmGA="

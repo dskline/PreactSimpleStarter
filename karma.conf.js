@@ -8,7 +8,7 @@ webpack.plugins.splice(commonsChunkPluginIndex, 1)
 
 webpack.module.rules.push(
   {
-    test: /test\/.*\.spec\.js$/,
+    test: /src\/.*\.spec\.js$/,
     exclude: [
       path.resolve('node_modules/')
     ],
@@ -47,14 +47,13 @@ module.exports = function (config) {
       ]
     },
 
-    browsers: ['PhantomJS'],
+    browsers: ['ChromeHeadless'],
 
     files: [
-      'test/**/*.spec.js'
+      'src/**/*.spec.js'
     ],
 
     preprocessors: {
-      'test/**/*.js': ['webpack'],
       'src/**/*.js': ['webpack'],
       '**/*.js': ['sourcemap']
     },

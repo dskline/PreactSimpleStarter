@@ -9,7 +9,6 @@ import ManifestPlugin from 'webpack-manifest-plugin'
 import OfflinePlugin from 'offline-plugin'
 import Dashboard from 'webpack-dashboard/plugin'
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin'
-import NetlifyServerPushPlugin from './src/config/netlifyServerPushPlugin'
 
 const ENV = process.env.NODE_ENV || 'development'
 
@@ -186,9 +185,6 @@ module.exports = {
             threshold: 10240,
             minRatio: 0.8
           }),
-          new NetlifyServerPushPlugin({
-            headersFile: '_headers'
-          }),
           new OfflinePlugin({
             relativePaths: false,
             publicPath: '/',
@@ -199,8 +195,7 @@ module.exports = {
               navigateFallbackURL: '/',
               events: true
             },
-            AppCache: false,
-            excludes: ['**/.*', '_headers']
+            AppCache: false
           })
         ]
         : []
