@@ -33,9 +33,10 @@ module.exports = {
   resolve: {
     extensions: ['.js'],
     alias: {
-      react: 'preact-compat',
+      'react': 'preact-compat',
       'react-dom': 'preact-compat',
-      src: path.resolve(__dirname, 'src/')
+      'create-react-class': 'preact-compat/lib/create-react-class',
+      'src': path.resolve(__dirname, 'src/')
     }
   },
 

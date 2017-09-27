@@ -8,7 +8,7 @@ import BlogPage from './pages/BlogPage'
 if (process.env.NODE_ENV === 'production') {
   require('./offline')
 } else {
-  require('preact/devtools')
+  require('preact/debug')
 }
 
 render(

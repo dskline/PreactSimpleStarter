@@ -1,9 +1,12 @@
 @import '~tachyons/css/tachyons.css';
 
-$breakpoint-small: 'screen', '<=30em';
-$breakpoint-not-small: 'screen', '>30em';
-$breakpoint-medium: 'screen', '>30em', '<60em';
-$breakpoint-large: 'screen', '>=60em';
+$maxPhoneWidthEm: 30;
+$maxTabletWidthEm: 60;
+
+$breakpoint-small: 'screen', '<=' + $maxPhoneWidthEm + 'em';
+$breakpoint-not-small: 'screen', '>' + $maxPhoneWidthEm + 'em';
+$breakpoint-medium: 'screen', '>' + $maxPhoneWidthEm + 'em', '<' + $maxTabletWidthEm + 'em';
+$breakpoint-large: 'screen', '>=' + $maxTabletWidthEm + 'em';
 
 $color-primary: #5F993A;
 $color-primary-dark: #224811;
@@ -20,7 +23,7 @@ $background-svg: $color-primary-dark url("data:image/svg+xml,%3Csvg xmlns='http:
   background-color: $color-primary-dark;
 }
 .bg-primary-dark-opaque {
-  background-color: rgba($color-primary-dark, .75);
+  background-color: rgba($color-primary-dark, .85);
 }
 .bg-secondary {
   background-color: $color-secondary;

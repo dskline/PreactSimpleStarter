@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
-import inView from 'in-view'
+import { bind } from 'decko'
+import VisibilitySensor from 'react-visibility-sensor'
 
 import MenuBar from 'src/components/MenuBar'
 import './style.scss'
@@ -9,22 +10,20 @@ export default class HeroTemplate extends Component {
     isAtTopOfPage: false
   }
 
-  componentDidMount () {
-    inView.offset(-30)
-    inView('#top-of-page')
-      .on('enter', () => this.setState({ isAtTopOfPage: true }))
-      .on('exit', () => this.setState({ isAtTopOfPage: false }))
-  }
-
   render (props, state) {
     return (
       <div class='bg-white'>
-        <div id='top-of-page' class='bg-black' />
         <MenuBar background={state.isAtTopOfPage ? 'bg-transparent' : 'bg-primary-dark-opaque'} />
-        <div id='content'>
-          {props.children}
-        </div>
+        <VisibilitySensor onChange={this._setIsTopOfPageVisible} partialVisibility='top' offset={{top: -30}}>
+          <div id='content'>
+            {props.children}
+          </div>
+        </VisibilitySensor>
       </div>
     )
+  }
+  @bind
+  _setIsTopOfPageVisible (isVisible) {
+    this.setState({ isAtTopOfPage: isVisible })
   }
 }

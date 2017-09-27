@@ -20,9 +20,9 @@ export default class MenuBar extends Component {
 
   render (props, state) {
     return (
-      <div id='menu-bar' class={props.background + ' h3 w-100 fixed top-0'}>
+      <div id='menu-bar' class={props.background + ' w-100 fixed top-0'}>
         <div id='logo-container' class='w3 mr-auto' />
-        <nav class='pa3 ph4-l'>
+        <nav class='flex items-center ph3 ph4-l'>
           {this._menuToggle('dismiss-menu-overlay')}
           <div id='hamburger-wrapper' class='dn'>
             {this._menuToggle('hamburger-overlay')}
@@ -30,7 +30,7 @@ export default class MenuBar extends Component {
             <div class='hamburger-piece' />
             <div class='hamburger-piece' />
           </div>
-          <div id='navbar-link-container' class='f5 b'>
+          <div id='navbar-link-container' class='f5 f4-l b'>
             {state.links}
           </div>
         </nav>
@@ -39,7 +39,8 @@ export default class MenuBar extends Component {
   }
   _menuToggle (id) {
     return (
-      <input id={id} type='checkbox' class='dn-ns' checked={this.state.isExpanded} onChange={this.linkState('isExpanded')} />
+      <input id={id} type='checkbox' class='dn-ns' aria-label={id}
+        checked={this.state.isExpanded} onChange={this.linkState('isExpanded')} />
     )
   }
   _link (title, icon, location) {

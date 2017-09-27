@@ -7,7 +7,7 @@ $sliding-menu-width: 50vw;
     right: -100vw;
     z-index: 2;
     width: $sliding-menu-width;
-    padding: 60px 0 10px;
+    padding: 4rem 0 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -22,12 +22,9 @@ $sliding-menu-width: 50vw;
     a {
       z-index: 4;
       margin: 0 2px;
-      padding: 9px 20px;
+      padding: 0.5rem 1rem;
       color: white;
 
-      i {
-        margin-right: 10px;
-      }
       &.active {
         background: $color-primary;
       }
