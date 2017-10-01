@@ -1,14 +1,6 @@
-@import '~include-media/dist/_include-media';
-@import 'style_wide';
-@import 'style_sliding_menu';
-@import 'style_hamburger';
+@import './style_sliding_menu';
+@import './style_hamburger';
 
-#menu-bar {
-  height: 3rem;
-  display: flex;
-  transition: background-color 1.5s;
-
-  nav {
-    user-select: none;
-  }
+#menu-bar nav {
+  user-select: none;
 }

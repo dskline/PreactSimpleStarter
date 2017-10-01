@@ -4,9 +4,11 @@ $maxPhoneWidthEm: 30;
 $maxTabletWidthEm: 60;
 
 $breakpoint-small: 'screen', '<=' + $maxPhoneWidthEm + 'em';
-$breakpoint-not-small: 'screen', '>' + $maxPhoneWidthEm + 'em';
-$breakpoint-medium: 'screen', '>' + $maxPhoneWidthEm + 'em', '<' + $maxTabletWidthEm + 'em';
+$breakpoint-not-small: 'screen', '>=' + $maxPhoneWidthEm + 'em';
+$breakpoint-medium: 'screen', '>=' + $maxPhoneWidthEm + 'em', '<=' + $maxTabletWidthEm + 'em';
 $breakpoint-large: 'screen', '>=' + $maxTabletWidthEm + 'em';
+
+@import '~include-media/dist/include-media';
 
 $color-primary: #5F993A;
 $color-primary-dark: #224811;
@@ -21,6 +23,9 @@ $background-svg: $color-primary-dark url("data:image/svg+xml,%3Csvg xmlns='http:
 }
 .bg-primary-dark {
   background-color: $color-primary-dark;
+}
+.bg-primary-opaque {
+  background-color: rgba($color-primary, .85);
 }
 .bg-primary-dark-opaque {
   background-color: rgba($color-primary-dark, .85);

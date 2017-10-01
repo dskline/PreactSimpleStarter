@@ -4,6 +4,7 @@ import InlineSVG from 'svg-inline-react'
 import 'linkstate/polyfill'
 
 import './style.scss'
+
 import HomeIcon from './icons/home.svg'
 import GithubIcon from './icons/github.svg'
 import BlogIcon from './icons/blog.svg'
@@ -20,17 +21,17 @@ export default class MenuBar extends Component {
 
   render (props, state) {
     return (
-      <div id='menu-bar' class={props.background + ' w-100 fixed top-0'}>
+      <div id='menu-bar' class={props.class + ' flex w-100 fixed top-0'}>
         <div id='logo-container' class='w3 mr-auto' />
-        <nav class='flex items-center ph3 ph4-l'>
+        <nav class='flex items-center ph3 pv2'>
           {this._menuToggle('dismiss-menu-overlay')}
-          <div id='hamburger-wrapper' class='dn'>
+          <div id='hamburger-wrapper' class='dn ma2'>
             {this._menuToggle('hamburger-overlay')}
-            <div class='hamburger-piece' />
-            <div class='hamburger-piece' />
-            <div class='hamburger-piece' />
+            <div class='hamburger-piece shadow-3' />
+            <div class='hamburger-piece shadow-3' />
+            <div class='hamburger-piece shadow-3' />
           </div>
-          <div id='navbar-link-container' class='f5 f4-l b'>
+          <div id='navbar-link-container' class='f5 b pv1'>
             {state.links}
           </div>
         </nav>

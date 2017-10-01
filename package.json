@@ -4,7 +4,7 @@
   "description": "www.spencerkline.com",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dashboard -- webpack-dev-server",
-    "start": "superstatic build -p 9999 --host 0.0.0.0 --gzip --no-cache",
+    "start": "superstatic -p 5000 --host 127.0.0.1 --no-cache --compression",
     "build": "cross-env NODE_ENV=production webpack -p --progress",
     "prebuild": "rm -rf build mkdirp build",
     "test": "karma start karma.conf.js --single-run",
@@ -36,6 +36,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-0": "6.24.1",
     "babel-register": "^6.18.0",
+    "brotli-webpack-plugin": "^0.4.1",
     "chai": "^4.1.0",
     "compression-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.0.1",
@@ -80,7 +81,7 @@
     "sinon": "^3.2.0",
     "sinon-chai": "^2.12.0",
     "source-map-loader": "^0.2.0",
-    "superstatic": "^4.0.3",
+    "superstatic": "^5.0.1",
     "svg-inline-react": "^3.0.0",
     "tachyons": "^4.8.1",
     "url-loader": "^0.5.7",
@@ -91,6 +92,8 @@
     "webpack-manifest-plugin": "^1.1.0"
   },
   "dependencies": {
+    "bulma": "^0.5.3",
+    "bulma-scss": "^0.3.0-cc1",
     "decko": "^1.2.0",
     "linkstate": "^1.1.0",
     "moment": "^2.18.1",

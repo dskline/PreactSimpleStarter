@@ -15,8 +15,8 @@ export default class LazyImage extends Component {
   }
   render (props, state) {
     if (state.isLoaded) {
-      return <img src={props.src} />
+      return <img src={props.src} alt={props.alt || ''} />
     }
-    return <div class='loading' />
+    return null
   }
 }

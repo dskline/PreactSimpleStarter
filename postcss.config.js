@@ -1,10 +1,12 @@
-const ENV = process.env.NODE_ENV || 'development'
+const autoprefixer = require('autoprefixer')
+const mediaQueryPacker = require('css-mqpacker')
+const cssNano = require('cssnano')
 
 module.exports = {
   plugins: [
-    require('autoprefixer'),
-    require('css-mqpacker'),
-    require('cssnano')({
+    autoprefixer,
+    mediaQueryPacker,
+    cssNano({
       preset: 'default'
     })]
 }

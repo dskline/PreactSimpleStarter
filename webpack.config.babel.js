@@ -1,12 +1,12 @@
 import path from 'path'
 import webpack from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import CompressionPlugin from 'compression-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import ManifestPlugin from 'webpack-manifest-plugin'
 import OfflinePlugin from 'offline-plugin'
+import BrotliPlugin from 'brotli-webpack-plugin'
 import Dashboard from 'webpack-dashboard/plugin'
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin'
 
@@ -19,7 +19,8 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
   entry: {
-    app: ['whatwg-fetch', 'babel-polyfill', './src/index.js'],
+    app: ['./src/index.js'],
+    polyfill: ['babel-polyfill'],
     vendor: ['preact', 'preact-router']
   },
 
@@ -179,10 +180,9 @@ module.exports = {
               warnings: 0
             }
           }),
-          new CompressionPlugin({
-            asset: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: /\.js$|\.css$|\.html$/,
+          new BrotliPlugin({
+            asset: '[path].br[query]',
+            test: /\.(js|css|html)$/,
             threshold: 10240,
             minRatio: 0.8
           }),

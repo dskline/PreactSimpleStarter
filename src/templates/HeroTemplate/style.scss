@@ -1,3 +1,20 @@
-#top-of-page {
-  height: 1px;
+#menu-bar {
+  transition: background-color 1.5s, box-shadow 1.5s;
+
+  &.bg-transparent {
+    @include media($breakpoint-small...) {
+      .hamburger-piece {
+        background-color: white;
+      }
+    }
+    @include media($breakpoint-not-small...) {
+      a {
+        color: #eee;
+
+        &.active {
+          color: white;
+        }
+      }
+    }
+  }
 }
