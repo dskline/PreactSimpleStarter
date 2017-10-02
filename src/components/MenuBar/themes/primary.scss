@@ -1,9 +1,5 @@
 @include media($breakpoint-not-small...) {
   #menu-bar.bg-primary-dark-opaque #navbar-link-container a {
-    color: rgb(221, 216, 208);
-
-    &.active {
-      color: white;
-    }
+    color: white;
   }
 }

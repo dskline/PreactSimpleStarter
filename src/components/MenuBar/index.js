@@ -21,9 +21,9 @@ export default class MenuBar extends Component {
 
   render (props, state) {
     return (
-      <div id='menu-bar' class={props.class + ' flex w-100 fixed top-0'}>
+      <div id='menu-bar' class={props.class + ' flex w-100 fixed top-0 pb1'}>
         <div id='logo-container' class='w3 mr-auto' />
-        <nav class='flex items-center ph3 pv2'>
+        <nav class='flex items-center ph3 pv1 pv0-ns'>
           {this._menuToggle('dismiss-menu-overlay')}
           <div id='hamburger-wrapper' class='dn ma2'>
             {this._menuToggle('hamburger-overlay')}
@@ -31,7 +31,7 @@ export default class MenuBar extends Component {
             <div class='hamburger-piece shadow-3' />
             <div class='hamburger-piece shadow-3' />
           </div>
-          <div id='navbar-link-container' class='f5 b pv1'>
+          <div id='navbar-link-container' class='b f5 f4-l pv2-ns'>
             {state.links}
           </div>
         </nav>
@@ -45,21 +45,21 @@ export default class MenuBar extends Component {
     )
   }
   _link (title, icon, location) {
-    const svg = <InlineSVG src={icon} class='mr2 dn-ns' />
+    const svg = <InlineSVG src={icon} class='mr3 dn-ns' />
     const attrs = {
       href: location,
-      class: 'no-underline ttu-ns mh3-ns'
+      class: 'no-underline pv1-ns mh3-ns'
     }
     if (location.startsWith('http')) {
       return (
         <a target='_blank' rel='noopener' {...attrs}>
-          {svg} {title}
+          {svg}{title}
         </a>
       )
     } else {
       return (
-        <Link activeClassName='active' {...attrs}>
-          {svg} {title}
+        <Link activeClassName='bb-ns' {...attrs}>
+          {svg}{title}
         </Link>
       )
     }

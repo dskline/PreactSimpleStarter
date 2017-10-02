@@ -7,12 +7,11 @@ $sliding-menu-width: 50vw;
     right: -100vw;
     z-index: 2;
     width: $sliding-menu-width;
-    padding: 4rem 0 0.5rem;
+    padding: 3.5rem 0 0.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
 
-    background: #373a47;
+    background: #333;
     -webkit-font-smoothing: antialiased;
 
     transform-origin: 0 0;
@@ -21,12 +20,11 @@ $sliding-menu-width: 50vw;
 
     a {
       z-index: 4;
-      margin: 0 2px;
+      margin: 2px;
       padding: 0.5rem 1rem;
       color: white;
-      font-size: 1em;
 
-      &.active {
+      &.b {
         background: $color-primary;
       }
     }

@@ -9,6 +9,7 @@ import OfflinePlugin from 'offline-plugin'
 import BrotliPlugin from 'brotli-webpack-plugin'
 import Dashboard from 'webpack-dashboard/plugin'
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 const ENV = process.env.NODE_ENV || 'development'
 
@@ -197,6 +198,11 @@ module.exports = {
               events: true
             },
             AppCache: false
+          }),
+          new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+            reportFilename: '../analytics/bundle-report.html',
+            openAnalyzer: false
           })
         ]
         : []

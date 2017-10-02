@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "www.spencerkline.com",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dashboard -- webpack-dev-server",
@@ -87,13 +87,12 @@
     "url-loader": "^0.5.7",
     "webpack": "^3.0.0",
     "webpack-async-await": "^1.1.0",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dashboard": "^0.4.0",
     "webpack-dev-server": "^2.5.0",
     "webpack-manifest-plugin": "^1.1.0"
   },
   "dependencies": {
-    "bulma": "^0.5.3",
-    "bulma-scss": "^0.3.0-cc1",
     "decko": "^1.2.0",
     "linkstate": "^1.1.0",
     "moment": "^2.18.1",
