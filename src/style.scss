@@ -1,0 +1,20 @@
+@import 'elements/LoadingImage/style';
+
+.bg-svg {
+  background: $background-svg;
+}
+.bg-primary {
+  background-color: $color-primary;
+}
+.bg-primary-dark {
+  background-color: $color-primary-dark;
+}
+.bg-primary-opaque {
+  background-color: rgba($color-primary, .85);
+}
+.bg-primary-dark-opaque {
+  background-color: rgba($color-primary-dark, .85);
+}
+.bg-secondary {
+  background-color: $color-secondary;
+}

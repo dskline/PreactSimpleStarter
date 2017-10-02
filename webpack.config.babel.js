@@ -88,7 +88,7 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
-              data: '@import "config/main";',
+              data: '@import "config/global";',
               includePaths: [
                 path.join(__dirname, 'src')
               ]
@@ -157,20 +157,8 @@ module.exports = {
             dest: 'index.html',
             inline: true,
             minify: true,
-            ignore: [/url\(http/],
-            dimensions: [{
-              // iPhone 6
-              height: 736,
-              width: 414
-            }, {
-              // iPad Pro
-              height: 1366,
-              width: 1024
-            }],
-            penthouse: {
-              blockJSRequests: false,
-              renderWaitTime: 4000
-            }
+            ignore: [/(!#loading-screen)/],
+            include: ['#loading-screen']
           }),
           new webpack.optimize.UglifyJsPlugin({
             output: {

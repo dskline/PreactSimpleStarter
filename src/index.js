@@ -1,6 +1,8 @@
 import { h, render } from 'preact'
 import { Router } from 'preact-router'
 
+import './style.scss'
+
 import HomePage from './pages/HomePage'
 import BlogPage from './pages/BlogPage'
 
@@ -17,3 +19,5 @@ render(
     <HomePage default />
   </Router>, document.body
 )
+
+document.getElementById('loading-screen').innerHTML = ''

@@ -1,10 +1,10 @@
-# Yet Another Portfolio PWA
+# Yet Another... Portfolio PWA
 
 [![Build Status](https://travis-ci.org/dskline/portfolio.svg?branch=master)](https://travis-ci.org/dskline/portfolio)
 [![Coverage Status](https://coveralls.io/repos/github/dskline/portfolio/badge.svg?branch=master)](https://coveralls.io/github/dskline/portfolio?branch=master)
 [![Code Climate Badge](https://codeclimate.com/github/dskline/portfolio/badges/gpa.svg)](https://codeclimate.com/github/dskline/portfolio/badges)
 
-This open source project was created to allow me to play with some of the latest and greatest web technologies: 
+This portfolio was created as a playground to try out the latest and greatest web technologies: 
 
   - React (actually Preact)
   - Redux
@@ -15,12 +15,12 @@ This open source project was created to allow me to play with some of the latest
 
 My main technical goals with this web application are as follows:
 
-- Be static, to minimize costs.
+- Be static, to minimize costs. 
 - Have a consistent design that works on all devices/screen sizes.
 - Work offline using service workers/caching.
-- Easy to develop and maintain (babel transpiling, live-reload, Sass)
+- Easy to develop and maintain. (babel transpiling, live-reload, Sass)
 - 95+% test coverage.
-- Aim for a 100/100 score on [Lighthouse](https://developers.google.com/web/tools/lighthouse/).  
+- Aim for a 100 score on [Lighthouse](https://developers.google.com/web/tools/lighthouse/).  
 
 # Quick-Start Guide
 
@@ -59,7 +59,7 @@ yarn run dev
 ```sh
 yarn run build
 ```
-> Try to avoid using Service Worker in your development environment, otherwise you'll need to hard reload the page any time you make a change.
+> Remember to update service worker in browser to test new builds.
 
 ## License
 
