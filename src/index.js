@@ -1,10 +1,11 @@
 import { h, render } from 'preact'
 import { Router } from 'preact-router'
 
-import './style.scss'
-
 import HomePage from './pages/HomePage'
 import BlogPage from './pages/BlogPage'
+
+import './style.scss'
+import loadingScreen from './elements/LoadingScreen'
 
 if (process.env.NODE_ENV === 'production') {
   require('./config/offline')
@@ -20,4 +21,4 @@ render(
   </Router>, document.body
 )
 
-document.getElementById('loading-screen').innerHTML = ''
+loadingScreen.tearDown()
