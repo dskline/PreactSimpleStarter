@@ -1,5 +1,14 @@
-@include media($breakpoint-not-small...) {
-  #menu-bar.bg-primary-dark-opaque #navbar-link-container a {
+#menu-bar.bg-primary-dark-opaque {
+  color: white;
+
+  a {
     color: white;
+  }
+
+  #logo-icon {
+    path {
+      stroke: white;
+    }
+    border-color: white;
   }
 }

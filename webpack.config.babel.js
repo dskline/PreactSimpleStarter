@@ -119,15 +119,14 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      title: 'Spencer Kline\'s Homepage',
       removeRedundantAttributes: true,
       inject: false,
       manifest: `${ENV === 'production' ? 'manifest.json' : '/assets/manifest.json'}`,
+      iconDirectory: `${ENV === 'production' ? '/icons/' : '/assets/icons/'}`,
       minify: {
         collapseWhitespace: true,
         removeComments: true
-      },
-      themeColor: '#333'
+      }
     }),
     new ScriptExtHtmlWebpackPlugin({
       defaultAttribute: 'async'
@@ -148,8 +147,7 @@ module.exports = {
         ? [
           new webpack.NoEmitOnErrorsPlugin(),
           new CopyWebpackPlugin([
-            { from: './src/assets/manifest.json', to: './' },
-            { from: './src/assets/img', to: './img' }
+            { from: './src/assets' }
           ]),
           new HtmlCriticalWebpackPlugin({
             base: path.join(path.resolve(__dirname), 'build/'),

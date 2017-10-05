@@ -1,6 +1,13 @@
 @import './style_sliding_menu';
 @import './style_hamburger';
 
-#menu-bar nav {
+#menu-bar {
+  transition: background-color 1s, box-shadow 1s;
   user-select: none;
+}
+#logo-icon {
+  width: 2.2em;
+}
+#logo-text {
+  margin: auto;
 }

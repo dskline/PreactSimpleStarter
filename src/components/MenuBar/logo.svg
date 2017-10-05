@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="35 -15 185 384">
+
+    <g id="jvs-content" enable-background="new">
+        <g class="logo-s" transform="matrix(1 0 0 1 128 192)">
+            <path xmlns="http://www.w3.org/2000/svg" stroke="#141613" stroke-width="17"
+                  stroke-linecap="miter" stroke-linejoin="round"
+                  d="M 305.3968505859375 357.13665771484375 L 406.8374328613281 419.05133056640625"
+                  transform="matrix(1 0 0 1 -356.671 -386.545)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 305.7185363769531 409.10748291015625 L 305.7185363769531 489.5965576171875"
+                  transform="matrix(1 0 0 1 -306.273 -488.048)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 299.86187744140625 317.0030517578125 L 368.8652648925781 282.9869079589844"
+                  transform="matrix(1 0 0 1 -300.416 -315.455)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 375.9423828125 363.4390563964844 L 375.9423828125 413.5899658203125"
+                  transform="matrix(1 0 0 1 -300.416 -315.455)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 299.86187744140625 469.3132019042969 L 375.9423828125 413.5899353027344"
+                  transform="matrix(1 0 0 1 -300.416 -315.455)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 223.78146362304688 413.5899353027344 L 299.86187744140625 469.3132019042969"
+                  transform="matrix(1 0 0 1 -300.416 -315.455)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="bevel"
+                  d="M 223.78146362304688 363.4390563964844 L 223.78146362304688 413.5899353027344"
+                  transform="matrix(1 0 0 1 -300.416 -315.455)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 299.86187744140625 413.58990478515625 L 299.86187744140625 388.8240661621094"
+                  transform="matrix(1 0 0 1 -300.416 -321.646)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 375.9423522949219 363.4391174316406 L 375.9423522949219 413.5899963378906"
+                  transform="matrix(-1 -1.22465e-16 1.22465e-16 -1 300.416 315.455)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 299.8618469238281 469.313232421875 L 375.9423522949219 413.5899353027344"
+                  transform="matrix(-1 -1.22465e-16 1.22465e-16 -1 300.416 315.455)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 223.78143310546875 413.5899353027344 L 299.8618469238281 469.313232421875"
+                  transform="matrix(-1 -1.22465e-16 1.22465e-16 -1 300.416 315.455)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 223.78143310546875 363.4390869140625 L 223.78143310546875 394.3963928222656"
+                  transform="matrix(-1 -1.22465e-16 1.22465e-16 -1 300.416 296.262)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="bevel"
+                  d="M 850.1290283203125 899.2303466796875 L 794.336669921875 867.65380859375"
+                  transform="matrix(1 0 0 1 -850.684 -832.052)" fill="#dddddd"/>
+            <path stroke="#141613" stroke-width="20" stroke-linecap="round" stroke-linejoin="bevel"
+                  d="M 223.78146362304688 363.4390563964844 L 244.06951904296875 351.0561828613281" fill="#dddddd"
+                  transform="matrix(1 0 0 1 -300.416 -315.455)"/>
+        </g>
+    </g>
+</svg>

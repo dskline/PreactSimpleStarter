@@ -17,7 +17,7 @@ export default () => {
         </div>
         <h3>In the meantime...</h3>
         <a href='https://www.github.com/dskline/portfolio' target='_blank' rel='noopener' class='f6 link pointer dim ph3 pv2 mb2 dib white bg-secondary'>
-          Check out my GitHub
+          View my progress on GitHub
         </a>
       </div>
     </div>

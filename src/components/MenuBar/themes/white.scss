@@ -1,5 +1,6 @@
 #menu-bar.bg-white {
   background-color: white;
+  color: black;
 
   .hamburger-piece {
     background-color: black;
@@ -7,15 +8,22 @@
   #hamburger-overlay:checked ~ .hamburger-piece {
     background-color: white;
   }
-
-  @include media($breakpoint-not-small...) {
-    #navbar-link-container a {
-      color: black;
+  #logo-icon {
+    path {
+      stroke: black;
     }
+    border-color: black;
+    border-width: .125rem;
   }
+
   @include media($breakpoint-small...) {
     .hamburger-piece {
       box-shadow: none;
+    }
+  }
+  @include media($breakpoint-not-small...) {
+    a {
+      color: black;
     }
   }
 }

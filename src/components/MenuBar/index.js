@@ -5,6 +5,7 @@ import 'linkstate/polyfill'
 
 import './style.scss'
 
+import Logo from './logo.svg'
 import HomeIcon from './icons/home.svg'
 import GithubIcon from './icons/github.svg'
 import BlogIcon from './icons/blog.svg'
@@ -21,9 +22,16 @@ export default class MenuBar extends Component {
 
   render (props, state) {
     return (
-      <div id='menu-bar' class={props.class + ' flex w-100 fixed top-0 pb1'}>
-        <div id='logo-container' class='w3 mr-auto' />
-        <nav class='flex items-center ph3 pv1 pv0-ns'>
+      <div id='menu-bar' class={props.class + ' flex w-100 fixed top-0 fw5 avenir'}>
+        {/* Menu Bar Left */}
+        <Link id='logo-container' href='/' class='flex ml3 ml4-l no-underline'>
+          <div id='logo-icon' class='mv1 mr3 ph2 ba bw1'>
+            <InlineSVG src={Logo} raw />
+          </div>
+          <div id='logo-text' class='dn db-ns f5 f4-l'>SpencerKline.com</div>
+        </Link>
+        {/* Menu Bar Right */}
+        <nav class='flex items-center ph3 pv1 pv0-ns ml-auto'>
           {this._menuToggle('dismiss-menu-overlay')}
           <div id='hamburger-wrapper' class='dn ma2'>
             {this._menuToggle('hamburger-overlay')}
@@ -31,7 +39,7 @@ export default class MenuBar extends Component {
             <div class='hamburger-piece shadow-3' />
             <div class='hamburger-piece shadow-3' />
           </div>
-          <div id='navbar-link-container' class='b f5 f4-l pv2-ns'>
+          <div id='navbar-link-container' class='f5 f4-l pb1-ns'>
             {state.links}
           </div>
         </nav>

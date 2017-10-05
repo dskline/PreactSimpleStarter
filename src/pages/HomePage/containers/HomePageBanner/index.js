@@ -4,7 +4,7 @@ import LazyImage from 'src/elements/LazyImage'
 import style from './style.scss'
 
 const desktopImg = 'https://res.cloudinary.com/spencerkline/image/upload/f_auto,w_auto/hero_landscape.jpg'
-const phoneImg = 'https://res.cloudinary.com/spencerkline/image/upload/f_auto,w_auto/a_270/hero_portrait.jpg'
+const phoneImg = 'https://res.cloudinary.com/spencerkline/image/upload/f_auto,w_auto/a_270/e_contrast:50/hero_portrait.jpg'
 
 export default class HomePageBanner extends Component {
   state = {

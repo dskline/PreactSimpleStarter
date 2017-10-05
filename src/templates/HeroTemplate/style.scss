@@ -1,20 +1,23 @@
-#menu-bar {
-  transition: background-color 1.5s, box-shadow 1.5s;
+#menu-bar.bg-transparent {
+  color: white;
 
-  &.bg-transparent {
-    @include media($breakpoint-small...) {
-      .hamburger-piece {
-        background-color: white;
-      }
+  a {
+    color: white;
+  }
+
+  #logo-icon {
+    path {
+      stroke: white;
     }
-    @include media($breakpoint-not-small...) {
-      a {
-        color: #eee;
+    border-color: white;
+  }
 
-        &.active {
-          color: white;
-        }
-      }
+  @include media($breakpoint-small...) {
+    .hamburger-piece {
+      background-color: white;
+    }
+    #logo-icon {
+      display: none;
     }
   }
 }
