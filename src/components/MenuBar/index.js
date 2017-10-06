@@ -24,7 +24,7 @@ export default class MenuBar extends Component {
     return (
       <div id='menu-bar' class={props.class + ' flex w-100 fixed top-0 fw5 avenir'}>
         {/* Menu Bar Left */}
-        <Link id='logo-container' href='/' class='flex ml3 ml4-l no-underline'>
+        <Link id='logo-container' href='/' class='flex ml3 ml4-l no-underline' aria-label='logo-home'>
           <div id='logo-icon' class='mv1 mr3 ph2 ba bw1'>
             <InlineSVG src={Logo} raw />
           </div>

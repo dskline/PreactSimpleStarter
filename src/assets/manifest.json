@@ -1,5 +1,6 @@
 {
-    "name": "SK.com Blog",
+    "name": "SpencerKline.com",
+    "short_name": "SK Blog",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
