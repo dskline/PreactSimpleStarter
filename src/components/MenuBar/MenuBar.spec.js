@@ -11,7 +11,7 @@ describe('MenuBar', () => {
 
   test('clicking hamburger overlay expands the menu', () => {
     const component = shallow(<MenuBar />)
-    component.find('#hamburger-overlay').simulate('change', { target: { value: true } })
+    component.find('#hamburger-overlay').simulate('change', { target: { checked: true } })
     expect(component.state('isExpanded')).toBe(true)
   })
 })
