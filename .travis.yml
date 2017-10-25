@@ -20,11 +20,11 @@ deploy:
   provider: firebase
   skip_cleanup: true
   token:
-    secure: "${FIREBASE_TOKEN}"
+    secure: FIREBASE_TOKEN
 - on:
     branch: beta
   provider: firebase
   project: beta
   skip_cleanup: true
   token:
-    secure: "${FIREBASE_TOKEN}"
+    secure: FIREBASE_TOKEN
