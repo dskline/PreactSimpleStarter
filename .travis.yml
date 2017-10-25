@@ -14,6 +14,8 @@ after_success:
 - cat ./coverage/lcov.info | node node_modules/.bin/coveralls
 before_deploy:
 - npm run build
+- echo $FIREBASE_TOKEN
+- echo $FIREBASE
 deploy:
 - on:
     branch: master
@@ -26,4 +28,4 @@ deploy:
   skip_cleanup: true
 env:
   global:
-    secure: FIREBASE_TOKEN=$FIREBASE_TOKEN
+    secure: FIREBASE_TOKEN=$FIREBASE
