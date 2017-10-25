@@ -19,10 +19,10 @@ deploy:
 - true:
     branch: master
   provider: script
-  script: firebase deploy --token ${FIREBASE_TOKEN}
+  script: firebase deploy --token "$FIREBASE_TOKEN"
   skip_cleanup: true
 - true:
     branch: beta
   provider: script
-  script: firebase deploy --token ${FIREBASE_TOKEN} --project "beta"
+  script: firebase deploy --token "$FIREBASE_TOKEN" --project "beta"
   skip_cleanup: true
