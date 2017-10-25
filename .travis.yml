@@ -24,3 +24,6 @@ deploy:
   provider: firebase
   project: beta
   skip_cleanup: true
+env:
+  global:
+    secure: FIREBASE_TOKEN=$FIREBASE_TOKEN
