@@ -1,46 +1,53 @@
-import { h, Component } from 'preact'
-import { Link } from 'preact-router/match'
+import React from 'react'
+import PropTypes from 'prop-types'
 import InlineSVG from 'svg-inline-react'
-import 'linkstate/polyfill'
+
+import Link from 'src/elements/Link'
 
 import './style.scss'
-
 import Logo from './logo.svg'
 import HomeIcon from './icons/home.svg'
 import GithubIcon from './icons/github.svg'
 import BlogIcon from './icons/blog.svg'
 
-export default class MenuBar extends Component {
-  state = {
-    isExpanded: false,
-    links: [
-      this._link('Home', HomeIcon, '/'),
-      this._link('Blog', BlogIcon, '/blog'),
-      this._link('GitHub', GithubIcon, 'https://www.github.com/dskline')
-    ]
+export default class MenuBar extends React.Component {
+  static propTypes = {
+    className: PropTypes.string
   }
-
-  render (props, state) {
+  static defaultProps = {
+    className: ''
+  }
+  constructor (props) {
+    super(props)
+    this.state = {
+      isExpanded: false
+    }
+  }
+  render () {
     return (
-      <div id='menu-bar' class={props.class + ' flex w-100 fixed top-0 fw5 avenir'}>
+      <div id='menu-bar' className={this.props.className + ' flex w-100 fixed top-0 fw5 avenir'}>
         {/* Menu Bar Left */}
-        <Link id='logo-container' href='/' class='flex ml3 ml4-l no-underline' aria-label='logo-home'>
-          <div id='logo-icon' class='mv1 mr3 ph2 ba bw1'>
+        <Link id='logo-container' url='/' className='flex ml3 ml4-l' aria-label='logo-home'>
+          <div id='logo-icon' className='mv1 mr3 ph2 ba bw1'>
             <InlineSVG src={Logo} raw />
           </div>
-          <div id='logo-text' class='dn db-ns f5 f4-l'>SpencerKline.com</div>
+          <div id='logo-text' className='dn db-ns f5 f4-l'>SpencerKline.com</div>
         </Link>
         {/* Menu Bar Right */}
-        <nav class='flex items-center ph3 pv1 pv0-ns ml-auto'>
+        <nav className='flex items-center ph3 pv1 pv0-ns ml-auto'>
           {this._menuToggle('dismiss-menu-overlay')}
-          <div id='hamburger-wrapper' class='dn ma2'>
+          <div id='hamburger-wrapper' className='dn ma2'>
             {this._menuToggle('hamburger-overlay')}
-            <div class='hamburger-piece shadow-3' />
-            <div class='hamburger-piece shadow-3' />
-            <div class='hamburger-piece shadow-3' />
+            <div className='hamburger-piece shadow-3' />
+            <div className='hamburger-piece shadow-3' />
+            <div className='hamburger-piece shadow-3' />
           </div>
-          <div id='navbar-link-container' class='f5 f4-l pb1-ns'>
-            {state.links}
+          <div id='navbar-link-container' className='f5 f4-l mr4-l pb1-ns'>
+            {[
+              this._link('Home', HomeIcon, '/'),
+              this._link('Blog', BlogIcon, '/blog'),
+              this._link('GitHub', GithubIcon, 'https://www.github.com/dskline')
+            ]}
           </div>
         </nav>
       </div>
@@ -48,28 +55,15 @@ export default class MenuBar extends Component {
   }
   _menuToggle (id) {
     return (
-      <input id={id} type='checkbox' class='dn-ns' aria-label={id}
-        checked={this.state.isExpanded} onChange={this.linkState('isExpanded')} />
+      <input id={id} type='checkbox' className='dn-ns' aria-label={id}
+        checked={this.state.isExpanded} onChange={(e) => { this.setState({ isExpanded: e.target.checked }) }} />
     )
   }
   _link (title, icon, location) {
-    const svg = <InlineSVG src={icon} class='mr3 dn-ns' />
-    const attrs = {
-      href: location,
-      class: 'no-underline pv1-ns mh3-ns'
-    }
-    if (location.startsWith('http')) {
-      return (
-        <a target='_blank' rel='noopener' {...attrs}>
-          {svg}{title}
-        </a>
-      )
-    } else {
-      return (
-        <Link activeClassName='bb-ns' {...attrs}>
-          {svg}{title}
-        </Link>
-      )
-    }
+    return (
+      <Link key={title} url={location} className='pv1-ns mh3-ns' active='bb-ns'>
+        <InlineSVG src={icon} className='mr3 dn-ns' />{title}
+      </Link>
+    )
   }
 }

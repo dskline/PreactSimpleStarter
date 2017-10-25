@@ -1,12 +1,13 @@
-import { h, Component } from 'preact'
+import React from 'react'
+
 import LazyImage from 'src/elements/LazyImage'
 
-import style from './style.scss'
+import { maxPhoneWidth } from './style.scss'
 
 const desktopImg = 'https://res.cloudinary.com/spencerkline/image/upload/f_auto,w_auto/hero_landscape.jpg'
 const phoneImg = 'https://res.cloudinary.com/spencerkline/image/upload/f_auto,w_auto/a_270/e_contrast:50/hero_portrait.jpg'
 
-export default class HomePageBanner extends Component {
+export default class HomePageBanner extends React.Component {
   state = {
     currentImage: null,
     images: {
@@ -14,10 +15,10 @@ export default class HomePageBanner extends Component {
       desktop: null
     }
   }
-  render (props, state) {
+  render () {
     return (
       <div id='home-page-banner'>
-        {state.currentImage}
+        {this.state.currentImage}
       </div>
     )
   }
@@ -29,7 +30,7 @@ export default class HomePageBanner extends Component {
     window.removeEventListener('resize', () => { this._setCurrentImageByScreenSize() })
   }
   _setCurrentImageByScreenSize () {
-    return this._screenWidthInEm() > style.maxPhoneWidth
+    return this._screenWidthInEm() > maxPhoneWidth
       ? this._setCurrentImage('desktop', desktopImg)
       : this._setCurrentImage('phone', phoneImg)
   }

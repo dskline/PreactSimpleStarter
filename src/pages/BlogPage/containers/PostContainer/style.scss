@@ -1,0 +1,31 @@
+@mixin line-clamp($lines-to-show) {
+  display: -webkit-box;
+  height: (.875rem * 1.5 * $lines-to-show); // Fallback for non-webkit browsers
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines-to-show;
+}
+.post-summary-container  {
+  min-width: 12rem;
+}
+.post-summary-desc .lh-copy {
+  margin-top: -5px;
+
+  @include media($breakpoint-medium...) {
+    @include line-clamp(4)
+  }
+  @include media($breakpoint-large...) {
+    @include line-clamp(6)
+  }
+}
+.post-summary-image {
+  min-width: 6rem;
+
+  @include media($breakpoint-small...) {
+    img {
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+  }
+}

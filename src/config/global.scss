@@ -15,4 +15,3 @@ $breakpoint-medium: 'screen', '>=' + $maxPhoneWidthEm + 'em', '<=' + $maxTabletW
 $breakpoint-large: 'screen', '>=' + $maxTabletWidthEm + 'em';
 
 @import '~include-media/dist/include-media';
-

@@ -1,0 +1,9 @@
+query BlogPostQuery ($first: Int!, $skip: Int!) {
+    results: allPosts (orderBy: createdAt_DESC, first: $first, skip: $skip) {
+        createdAt
+        title
+        titleHtml
+        titleImageUrl
+        content
+    }
+}

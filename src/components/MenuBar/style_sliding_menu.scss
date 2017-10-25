@@ -5,7 +5,7 @@ $sliding-menu-width: 50vw;
     position: fixed;
     top: 0;
     right: -100vw;
-    z-index: 2;
+    z-index: 3;
     width: $sliding-menu-width;
     padding: 3.5rem 0 0.5rem;
     display: flex;
@@ -19,12 +19,12 @@ $sliding-menu-width: 50vw;
     transition: 0.5s;
 
     a {
-      z-index: 4;
+      z-index: 5;
       margin: 2px;
       padding: 0.5rem 1rem;
       color: white;
 
-      &.b {
+      &.bb-ns {
         background: $color-primary;
       }
     }

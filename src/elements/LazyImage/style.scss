@@ -1,0 +1,21 @@
+.lazyImage {
+  position: relative;
+  float: left;
+  width: 100%;
+  background-color: $color-primary-dark;
+
+  img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
+  svg {
+    width: 25%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}

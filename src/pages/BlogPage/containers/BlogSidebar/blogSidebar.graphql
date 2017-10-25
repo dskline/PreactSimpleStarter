@@ -1,0 +1,9 @@
+query BlogPostQuery {
+    results: allBlogFavoriteTypes (orderBy: order_ASC) {
+        type: name
+        bookmarks: favorites(orderBy: title_ASC) {
+            title
+            url
+        }
+    }
+}

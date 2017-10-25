@@ -20,9 +20,9 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
   entry: {
-    app: ['./src/index.js'],
-    polyfill: ['babel-polyfill'],
-    vendor: ['preact', 'preact-router']
+    app: ['whatwg-fetch', './src/entry.js'],
+    react: ['react', 'react-dom'],
+    apollo: ['apollo-client', 'apollo-cache-inmemory', 'apollo-link', 'apollo-cache', 'react-apollo']
   },
 
   output: {
@@ -35,9 +35,6 @@ module.exports = {
   resolve: {
     extensions: ['.js'],
     alias: {
-      'react': 'preact-compat',
-      'react-dom': 'preact-compat',
-      'create-react-class': 'preact-compat/lib/create-react-class',
       'src': path.resolve(__dirname, 'src/')
     }
   },
@@ -63,12 +60,11 @@ module.exports = {
           options: {
             cacheDirectory: true,
             presets: ['env', 'stage-0'],
-            plugins: ['transform-async-to-generator', 'transform-decorators-legacy']
+            plugins: ['transform-async-to-generator']
           }
         }],
         include: [
-          path.resolve('src'),
-          path.resolve('node_modules/preact-compat/src')
+          path.resolve('src')
         ]
       },
       {
@@ -100,6 +96,10 @@ module.exports = {
       {
         test: /\.svg/,
         use: 'raw-loader'
+      },
+      {
+        test: /\.graphql/,
+        loader: 'graphql-tag/loader'
       }
     ]
   },
@@ -107,7 +107,7 @@ module.exports = {
   plugins: [
     extractSass,
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
+      names: ['react', 'apollo'],
       minChunks: Infinity
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),

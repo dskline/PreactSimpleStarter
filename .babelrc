@@ -6,18 +6,11 @@
           "last 2 versions"
         ]
       },
+      "useBuiltIns": "usage",
       "debug": true
     }],
-    "stage-0"
+    "stage-0",
+    "react"
   ],
-  "plugins": [
-    ["transform-decorators-legacy"],
-    ["transform-react-jsx", { "pragma": "h" }]
-  ],
-  "env": {
-    "test": {
-      "plugins": ["istanbul"]
-    }
-  },
   "sourceMaps": true
 }
