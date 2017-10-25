@@ -24,7 +24,7 @@ deploy:
 - on:
     branch: beta
   provider: firebase
-  project: "beta"
+  project: beta
   skip_cleanup: true
   token:
-    secure: $FIREBASE_TOKEN
+    secure: fKf8WP1scU6K4Y7/v9UkhhNVCksMGgrFOTffNQW4tyAX2mKbgNeVBY8vf1ExVVuoy62X9P/LRLBTPcf8XhL5aPek0qrDOgQF+Okrcjh09cgNgoGATrKN/oYgFjdkAMwMocsS1R2LC8oN7mKULuepf8bqGhGtMsGFGEHPDYil5QoYDdev61e/nHwNR2bXLJGvRWqPNS9d/dQNdsku2opWzXYXEeibPbBdMPIjMP7aNnxez9wcNNRIb3K8OeKbt7/neiZsxgx4fN1udZ/ykzdI1y2fX0ruOYpA9/lLNo42JglEBvlvOKcHx8ccrQo2IXb+6cNR9HkPCnUVkbVhaTYKzG1qdnERLnHJlinimRDiYMZ1VGsnevbGGCBO4o/AHClPMe23qcCxleQVT9MMMgVjtHG3PVDCaQDNdBoAdpujAshe8+nTVPPDzlKZGvYLpu4ge+CzKjnbzwjCU01QYccwl+eCqq2qBA1+49BHN2jcePlX6YX5WOW347ZtV5z5hxmed5AdoCuBnhV3ZmJHqeYO/Rj+5w94jvOo4OjpVl+Q6N49JH/kl9qdV73kji0Uvw/Tmf+Z4V9uOGtTe2SLN9/FerGu8qkHh0AbLL/luc5dIXuvnWCnalRVSd7LqRv2R8NgHO6N+dTwMTwceK7LrFtdkICDQ62PrzuuFYL179+rxx0=
