@@ -15,16 +15,16 @@ after_success:
 before_deploy:
 - npm run build
 deploy:
-- provider: firebase
+- on:
+    branch: master
+  provider: firebase
   skip_cleanup: true
   token:
     secure: $FIREBASE_TOKEN
-  on:
-    branch: master
-- provider: firebase
-  skip_cleanup: true
-  project: "beta"
-  on:
+- on:
     branch: beta
+  provider: firebase
+  project: "beta"
+  skip_cleanup: true
   token:
     secure: $FIREBASE_TOKEN
