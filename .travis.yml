@@ -26,4 +26,4 @@ deploy:
   skip_cleanup: true
 env:
   global:
-    secure: FIREBASE_TOKEN=${FIREBASE_TOKEN}
+    secure: FIREBASE_TOKEN=$FIREBASE_TOKEN
