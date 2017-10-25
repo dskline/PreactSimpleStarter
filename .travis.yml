@@ -14,18 +14,13 @@ after_success:
 - cat ./coverage/lcov.info | node node_modules/.bin/coveralls
 before_deploy:
 - npm run build
-- echo $FIREBASE_TOKEN
-- echo $FIREBASE
 deploy:
-- on:
+- true:
     branch: master
   provider: firebase
   skip_cleanup: true
-- on:
+- true:
     branch: beta
   provider: firebase
   project: beta
   skip_cleanup: true
-env:
-  global:
-    secure: FIREBASE_TOKEN=$FIREBASE
