@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "dskline-portfolio"
+    "default": "dskline-portfolio",
+    "beta": "dskline-portfolio-beta"
   }
 }
