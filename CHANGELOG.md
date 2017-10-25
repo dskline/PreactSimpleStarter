@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.2.1 / 2017-10-25
+
+### Fixes
+
+* Background image was using http instead of https
+* Sliding menu had wrongly colored links on blog page
+
 ## v1.2.0 / 2017-10-25
 
 ### New Features
