@@ -19,12 +19,8 @@ deploy:
     branch: master
   provider: firebase
   skip_cleanup: true
-  token:
-    secure: $FIREBASE
 - on:
     branch: beta
   provider: firebase
   project: beta
   skip_cleanup: true
-  token:
-    secure: $FIREBASE
