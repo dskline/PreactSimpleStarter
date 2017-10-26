@@ -11,7 +11,7 @@ export default function SidebarTemplate ({sidebarComponent, menuClass, ...attrs}
   return (
     <div id={attrs.id || 'app-container'} className={attrs.className + ' overflow-y-scroll'}>
       <MenuBar className={menuClass} />
-      <div id='two-column-container' className='flex flex-row mt6 mh3 mh4-m mh6-l br3-ns'>
+      <div id='two-column-container' className='bg-white-40 flex flex-row mt6 mh3 mh4-m mh6-l br3-ns'>
         <div id='content' className='inline-flex flex-column w-100 pa3'>
           {attrs.children}
         </div>

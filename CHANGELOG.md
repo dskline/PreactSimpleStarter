@@ -1,8 +1,12 @@
 # Changelog
 
-## v1.2.1 / 2017-10-25
+## v1.2.2 / 2017-10-26
 
-### Fixes
+* Style improvements
+    * Add transparent layer to mobile blog to add some contrast between cards and background
+    * Better margins for blog sidebar
+
+## v1.2.1 / 2017-10-25
 
 * Background image was using http instead of https
 * Sliding menu had wrongly colored links on blog page

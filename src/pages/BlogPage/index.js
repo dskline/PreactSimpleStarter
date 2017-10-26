@@ -10,9 +10,9 @@ import './style.scss'
 export default class BlogPage extends React.Component {
   render () {
     return (
-      <SidebarTemplate id='blog-page' class='bg-white-10' menuClass='bg-white shadow-3'
+      <SidebarTemplate id='blog-page' className='bg-white-10' menuClass='bg-white shadow-3'
         sidebarComponent={<BlogSidebar />}>
-        <div className='bg-white-80 w-100 h2 br2 mb4' />
+        <div className='bg-white w-100 h2 br2 mb4 shadow-3' />
         <PostContainer />
       </SidebarTemplate>
     )
