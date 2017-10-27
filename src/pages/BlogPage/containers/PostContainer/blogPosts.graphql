@@ -4,6 +4,6 @@ query BlogPostQuery ($first: Int!, $skip: Int!) {
         title
         titleHtml
         titleImageUrl
-        content
+        description
     }
 }

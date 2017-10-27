@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.3 / 2017-10-26
+
+* Users can now click on a blog post in [spencerkline.com/blog] to access a detailed view
+    * Detailed view can also be accessed with a url, if the url is known, i.e. [spencerkline.com/blog/welcome]
+
 ## v1.2.2 / 2017-10-26
 
 * Style improvements

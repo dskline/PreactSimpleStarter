@@ -11,14 +11,17 @@ const Dimensions = {
 export default class LazyImage extends React.Component {
   static defaultProps = {
     alt: '',
+    className: '',
     dimension: undefined,
     placeholder: <InlineSVG src={Spinner} raw />
   }
   static propTypes = {
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
+    className: PropTypes.string,
     dimension: PropTypes.oneOf(Object.keys(Dimensions)),
-    placeholder: PropTypes.node
+    placeholder: PropTypes.node,
+    rounded: PropTypes.bool
   }
   constructor (props) {
     super(props)
@@ -32,10 +35,12 @@ export default class LazyImage extends React.Component {
     image.src = this.props.src
   }
   render () {
-    const {src, alt, dimension, placeholder} = this.props
+    const {src, alt, className, dimension, placeholder, rounded} = this.props
     return (
-      <div className='lazyImage' style={dimension ? {paddingBottom: Dimensions[dimension] + '%'} : {}}>
-        {this.state.isLoaded ? <img src={src} alt={alt} style={dimension ? {height: '100%'} : {}} /> : placeholder}
+      <div className={className + ' lazyImage'} style={dimension ? {paddingBottom: Dimensions[dimension] + '%'} : {}}>
+        {this.state.isLoaded
+          ? <img src={src} alt={alt} style={dimension ? {height: '100%'} : {}} className={rounded ? 'br2' : ''} />
+          : placeholder}
       </div>
     )
   }

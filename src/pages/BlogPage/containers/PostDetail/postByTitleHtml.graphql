@@ -1,0 +1,10 @@
+query PostByTitleHtml ($titleHtml: String!) {
+    posts: allPosts (filter: {
+        titleHtml: $titleHtml
+    }) {
+        createdAt
+        title
+        titleImageUrl
+        content
+    }
+}

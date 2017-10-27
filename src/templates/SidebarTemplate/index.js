@@ -15,7 +15,7 @@ export default function SidebarTemplate ({sidebarComponent, menuClass, ...attrs}
         <div id='content' className='inline-flex flex-column w-100 pa3'>
           {attrs.children}
         </div>
-        <div id='sidebar' className='dn inline-flex-ns w-40 pa3'>
+        <div id='sidebar' className='dn inline-flex-ns w-40 w-30-l pa3'>
           {sidebarComponent}
         </div>
       </div>

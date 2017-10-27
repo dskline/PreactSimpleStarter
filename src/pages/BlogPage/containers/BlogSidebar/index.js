@@ -20,7 +20,7 @@ export default class BlogSidebar extends React.Component {
     }
     return (
       <div id='blog-sidebar' className='flex flex-column center white f6 f5-l'>
-        <div className='center mb3 b truncate'>My Bookmarks</div>
+        <div className='tc mb3 b truncate'>My Bookmarks</div>
         {results.map((bookmarksByType, i) =>
           <Bookmarks key={i} bookmarksByType={bookmarksByType} />
         )}
@@ -41,7 +41,9 @@ class Bookmarks extends React.Component {
   render () {
     const {type, bookmarks} = this.props.bookmarksByType
     return [
-      <div key='title' className='dib center bb mt3 mb1 pb2 b'>{type}</div>,
+      <div key='title' className='flex'>
+        <div className='center dib bb mt3 mb1 pb2 b'>{type}</div>
+      </div>,
       <div key='items' className='flex flex-column'>
         <ul>
           {bookmarks.map((item, i) =>
