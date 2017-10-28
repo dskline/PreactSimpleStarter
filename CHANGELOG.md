@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.5 / 2017-10-28
+
+* Fix sidebar falling out of the container
+
 ## v1.2.4 / 2017-10-28
 
 * Added additional GitHub-like styling for blockquotes and code snippets on Post detail view

@@ -12,10 +12,10 @@ export default function SidebarTemplate ({sidebarComponent, menuClass, ...attrs}
     <div id={attrs.id || 'app-container'} className={attrs.className + ' overflow-y-scroll'}>
       <MenuBar className={menuClass} />
       <div id='two-column-container' className='bg-white-40 flex flex-row mt6 mh3 mh4-m mh6-l br3-ns'>
-        <div id='content' className='inline-flex flex-column w-100 pa3'>
+        <div id='content' className='inline-flex flex-column w-100 w-two-thirds-ns pa3'>
           {attrs.children}
         </div>
-        <div id='sidebar' className='dn inline-flex-ns w-40 w-30-l pa3'>
+        <div id='sidebar' className='dn inline-flex-ns w-third pa3'>
           {sidebarComponent}
         </div>
       </div>
