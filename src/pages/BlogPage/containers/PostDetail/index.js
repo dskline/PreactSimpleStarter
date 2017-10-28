@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import marked from 'marked'
 
 import { graphql } from 'react-apollo'
 import query from './postByTitleHtml.graphql'
 import LazyImage from 'src/elements/LazyImage'
 import Link from 'src/elements/Link'
+
+import './style.scss'
 
 const dateFormat = { 'weekday': 'long', 'year': 'numeric', 'month': 'long', 'day': 'numeric' }
 
@@ -57,8 +58,8 @@ class PostDetail extends React.Component {
           <div className='pv2 i'>
             { datePosted.toLocaleDateString('en-us', dateFormat) }
           </div>
-          <div className='mt3 pt3 bt lh-copy'
-            dangerouslySetInnerHTML={{__html: marked(post.content, {sanitize: true})}} />
+          <div id='post-content' className='mt3 pt3 bt lh-copy'
+            dangerouslySetInnerHTML={{__html: post.content}} />
         </div>
       </div>
     )

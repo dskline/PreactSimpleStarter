@@ -6,8 +6,7 @@
 
 This portfolio was created as a playground to try out the latest and greatest web technologies: 
 
-  - React (actually Preact)
-  - Redux
+  - React
   - GraphQL
   - Sass
   - Webpack

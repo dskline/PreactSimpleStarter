@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.4 / 2017-10-28
+
+* Added additional GitHub-like styling for blockquotes and code snippets on Post detail view
+
 ## v1.2.3 / 2017-10-26
 
 * Users can now click on a blog post in [spencerkline.com/blog] to access a detailed view
