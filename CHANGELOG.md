@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.7 / 2017-10-30
+
+* Added compatibility with IE
+
 ## v1.2.6 / 2017-10-30
 
 * Horizontal scrolling in code tags now works on mobile

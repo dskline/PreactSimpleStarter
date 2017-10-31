@@ -2,6 +2,8 @@ import React from 'react'
 import { NavLink as InternalLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
+import { isIE } from 'src/config/browser'
+
 export default class Link extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
@@ -21,7 +23,7 @@ export default class Link extends React.Component {
       )
     } else {
       return (
-        <a href={url} target='_blank' rel='noopener' {...attrs}>
+        <a href={url} target={isIE ? '_self' : '_blank'} rel='noopener' {...attrs}>
           {children}
         </a>
       )

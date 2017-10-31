@@ -20,7 +20,7 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
   entry: {
-    app: ['whatwg-fetch', './src/entry.js'],
+    app: ['whatwg-fetch', 'babel-polyfill', './src/entry.js'],
     react: ['react', 'react-dom'],
     apollo: ['apollo-client', 'apollo-cache-inmemory', 'apollo-link', 'apollo-cache', 'react-apollo']
   },

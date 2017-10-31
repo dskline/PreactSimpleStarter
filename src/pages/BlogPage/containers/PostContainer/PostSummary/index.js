@@ -20,8 +20,8 @@ export default class PostSummary extends React.Component {
   render () {
     const { post } = this.props
     return (
-      <Link url={'/blog/' + post.titleHtml}>
-        <div className='post-summary-container bg-white flex flex-column-reverse flex-column-ns w-100 mb3 mb4-ns br2 shadow-3'>
+      <Link url={'/blog/' + post.titleHtml} className='w-100'>
+        <div className='post-summary-container bg-white flex flex-column-reverse flex-column-ns mb3 mb4-ns br2 shadow-3'>
           <div className='blog-header pa3 pb4'>
             <div className='f6 mb1'>{timeSince(new Date(post.createdAt))}</div>
             <div className='f4 f3-l b'>{post.title}</div>

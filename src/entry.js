@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import './config/ieFixes'
 import App from './'
 import LoadingScreen from './elements/LoadingScreen'
+
 import './style.scss'
 
 if (process.env.NODE_ENV === 'production') {

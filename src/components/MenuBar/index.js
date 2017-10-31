@@ -29,12 +29,12 @@ export default class MenuBar extends React.Component {
         {/* Menu Bar Left */}
         <Link id='logo-container' url='/' className='flex ml3 ml4-l' aria-label='logo-home'>
           <div id='logo-icon' className='mv1 mr3 ph2 ba bw1'>
-            <InlineSVG src={Logo} raw />
+            <InlineSVG src={Logo} raw={Element.prototype.hasOwnProperty('remove')} />
           </div>
-          <div id='logo-text' className='dn db-ns f5 f4-l'>SpencerKline.com</div>
+          <div id='logo-text' className='dn db-ns pv2 mv2 f5 f4-l'>SpencerKline.com</div>
         </Link>
         {/* Menu Bar Right */}
-        <nav className='flex items-center ph3 pv1 pv0-ns ml-auto'>
+        <nav className='flex items-center ph3 ml-auto'>
           {this._menuToggle('dismiss-menu-overlay')}
           <div id='hamburger-wrapper' className='dn ma2'>
             {this._menuToggle('hamburger-overlay')}

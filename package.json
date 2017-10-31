@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "www.spencerkline.com",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dashboard -- webpack-dev-server",
@@ -132,7 +132,10 @@
       "expect": true,
       "fetch": true,
       "Image": true,
-      "getComputedStyle": true
+      "getComputedStyle": true,
+      "Element": true,
+      "CharacterData": true,
+      "DocumentType": true
     }
   }
 }

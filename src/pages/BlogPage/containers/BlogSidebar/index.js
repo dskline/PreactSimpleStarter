@@ -47,7 +47,7 @@ class Bookmarks extends React.Component {
         <div className='center dib bb mt3 mb1 pb2 b'>{type}</div>
         <ul>
           {bookmarks.map((item, i) =>
-            <li key={i} className='mb2'>
+            <li key={i} className='mb2 nowrap'>
               <Link url={item.url}>{item.title}</Link>
             </li>
           )}

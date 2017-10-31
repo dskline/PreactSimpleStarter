@@ -8,7 +8,7 @@ export default function UnderConstruction () {
   return (
     <div className='flex flex-column items-center dt-ns mw8 h6 center pv5 ph3'>
       <div className='db dtc-ns center v-mid-ns w-third w-25-m'>
-        <InlineSVG src={ConstructionImage} raw />
+        <InlineSVG src={ConstructionImage} raw={Element.prototype.hasOwnProperty('remove')} />
       </div>
       <div className='flex flex-column items-start dtc-ns v-mid pl4-ns mw-100 w-two-thirds-ns'>
         <div className='mw-100'>

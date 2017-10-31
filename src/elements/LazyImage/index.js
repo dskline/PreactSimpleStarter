@@ -13,7 +13,7 @@ export default class LazyImage extends React.Component {
     alt: '',
     className: '',
     dimension: undefined,
-    placeholder: <InlineSVG src={Spinner} raw />
+    placeholder: <InlineSVG src={Spinner} raw={Element.prototype.hasOwnProperty('remove')} />
   }
   static propTypes = {
     src: PropTypes.string.isRequired,
