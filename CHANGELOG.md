@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.6 / 2017-10-30
+
+* Horizontal scrolling in code tags now works on mobile
+* Update Apollo dependencies to latest v2.0
+
 ## v1.2.5 / 2017-10-28
 
 * Fix sidebar falling out of the container

@@ -1,4 +1,5 @@
 #post-content {
+
   blockquote {
     padding: 0 1rem;
     margin: 1rem 0;
@@ -13,11 +14,15 @@
     border-radius: 0.25rem;
   }
   pre {
+    overflow-x: auto;
     padding: 1rem;
-    overflow: auto;
-    font-size: 85%;
+    font-size: 60%;
     background-color: #f6f8fa;
     border-radius: 0.25rem;
+
+    @include media($breakpoint-not-small...) {
+      font-size: 85%;
+    }
   }
   li {
     padding-bottom: 1rem;
