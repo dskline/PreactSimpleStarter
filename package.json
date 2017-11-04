@@ -133,7 +133,8 @@
       "expect": true,
       "fetch": true,
       "Image": true,
-      "getComputedStyle": true
+      "getComputedStyle": true,
+      "Element": true
     }
   }
 }

@@ -3,11 +3,6 @@ node_js:
 - stable
 dist: trusty
 sudo: false
-addons:
-  chrome: stable
-cache:
-  directories:
-  - node_modules
 script:
 - npm test
 after_success:
