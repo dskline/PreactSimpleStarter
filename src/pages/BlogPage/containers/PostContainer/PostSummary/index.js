@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Link from 'src/elements/Link'
-import LazyImage from 'src/elements/LazyImage'
+import { LazyImage, Dimensions } from 'src/elements/LazyImage'
 import { timeSince } from 'src/utilities/DateUtils'
 
 import './style.scss'
@@ -28,7 +28,7 @@ export default class PostSummary extends React.Component {
           </div>
           <div className='post-summary-desc inline-flex ph3-ns pb3-ns'>
             <div className='post-summary-image dib w-100 w-30-ns'>
-              <LazyImage src={post.titleImageUrl} dimension={'16x9'} />
+              <LazyImage src={post.titleImageUrl} dimension={Dimensions.wide} className='slide-in' />
             </div>
             <div className='dn dib-ns h3-m w-70 pl3 f6 overflow-y-hidden lh-copy'>
               {post.description}

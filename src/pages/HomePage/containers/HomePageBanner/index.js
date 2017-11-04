@@ -1,52 +1,43 @@
 import React from 'react'
 
-import LazyImage from 'src/elements/LazyImage'
+import { LazyImage } from 'src/elements/LazyImage'
 
 import { maxPhoneWidth } from './style.scss'
 
-const desktopImg = 'https://res.cloudinary.com/spencerkline/image/upload/f_auto,w_auto/hero_landscape.jpg'
-const phoneImg = 'https://res.cloudinary.com/spencerkline/image/upload/f_auto,w_auto/a_270/e_contrast:50/hero_portrait.jpg'
+const images = {
+  portrait: 'e_contrast:50/hero_portrait',
+  landscape: 'hero_landscape'
+}
 
 export default class HomePageBanner extends React.Component {
-  state = {
-    currentImage: null,
-    images: {
-      phone: null,
-      desktop: null
+  constructor (props) {
+    super(props)
+    this.state = {
+      orientation: null
     }
   }
   render () {
+    const { orientation } = this.state
     return (
       <div id='home-page-banner'>
-        {this.state.currentImage}
+        { !orientation ? null
+          : <LazyImage src={images[orientation]} className='h-100'
+            portraitRotation={orientation === 'portrait' ? '270' : null} />
+        }
       </div>
     )
   }
   componentDidMount () {
-    this._setCurrentImageByScreenSize()
-    window.addEventListener('resize', () => { this._setCurrentImageByScreenSize() })
+    this._setOrientationByScreenWidth()
+    window.addEventListener('resize', () => { this._setOrientationByScreenWidth() })
   }
   componentWillUnmount () {
-    window.removeEventListener('resize', () => { this._setCurrentImageByScreenSize() })
+    window.removeEventListener('resize', () => { this._setOrientationByScreenWidth() })
   }
-  _setCurrentImageByScreenSize () {
-    return this._screenWidthInEm() > maxPhoneWidth
-      ? this._setCurrentImage('desktop', desktopImg)
-      : this._setCurrentImage('phone', phoneImg)
-  }
-  _setCurrentImage (screen, imageUrl) {
-    let image = this.state.images[screen]
-    let newState = {}
-    if (!image) {
-      newState.images = {}
-      image = <LazyImage src={imageUrl} />
-      newState.images[screen] = image
-    }
-    if (this.state.currentImage !== image) {
-      newState.currentImage = image
-    }
-    if (newState !== {}) {
-      this.setState(newState)
+  _setOrientationByScreenWidth () {
+    const newOrientation = this._screenWidthInEm() > maxPhoneWidth ? 'landscape' : 'portrait'
+    if (this.state.orientation !== newOrientation) {
+      this.setState({ orientation: newOrientation })
     }
   }
   _screenWidthInEm () {

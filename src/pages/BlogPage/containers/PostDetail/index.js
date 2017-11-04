@@ -3,12 +3,17 @@ import PropTypes from 'prop-types'
 
 import { graphql } from 'react-apollo'
 import query from './postByTitleHtml.graphql'
-import LazyImage from 'src/elements/LazyImage'
+import { LazyImage, Dimensions } from 'src/elements/LazyImage'
 import Link from 'src/elements/Link'
 
 import './style.scss'
 
-const dateFormat = { 'weekday': 'long', 'year': 'numeric', 'month': 'long', 'day': 'numeric' }
+const dateFormat = {
+  'weekday': 'long',
+  'year': 'numeric',
+  'month': 'long',
+  'day': 'numeric'
+}
 
 @graphql(query, {
   options: ({titleHtml}) => ({variables: {titleHtml}})
@@ -51,7 +56,7 @@ class PostDetail extends React.Component {
     return (
       <div>
         <Link url='/blog'>
-          <LazyImage src={post.titleImageUrl} className='mb4' rounded dimension='16x9' />
+          <LazyImage src={post.titleImageUrl} className='br2 mb4' dimension={Dimensions.wide} />
         </Link>
         <div className='pa4 pa0-l'>
           <div className='mb1 f3 b lh-title'>{ post.title }</div>

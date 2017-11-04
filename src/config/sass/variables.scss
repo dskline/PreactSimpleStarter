@@ -1,5 +1,3 @@
-@import '~tachyons/css/tachyons.css';
-
 $color-primary: #5F993A;
 $color-primary-dark: #224811;
 $color-secondary: #9F3C55;
@@ -13,5 +11,3 @@ $breakpoint-small: 'screen', '<=' + $maxPhoneWidthEm + 'em';
 $breakpoint-not-small: 'screen', '>=' + $maxPhoneWidthEm + 'em';
 $breakpoint-medium: 'screen', '>=' + $maxPhoneWidthEm + 'em', '<=' + $maxTabletWidthEm + 'em';
 $breakpoint-large: 'screen', '>=' + $maxTabletWidthEm + 'em';
-
-@import '~include-media/dist/include-media';

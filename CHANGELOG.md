@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.8 / 2017-11-02
+
+* Responsive images with lazysizes
+    * Responsive sizes so smaller screens can save bandwidth
+    * webp for Chrome, jpeg xr for Edge, jpg for everyone else
+
 ## v1.2.7 / 2017-10-30
 
 * Added compatibility with IE

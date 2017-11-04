@@ -84,7 +84,7 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
-              data: '@import "config/global";',
+              data: '@import "config/sass/imports";',
               includePaths: [
                 path.join(__dirname, 'src')
               ]
@@ -121,7 +121,7 @@ module.exports = {
       template: './src/index.html',
       removeRedundantAttributes: true,
       inject: false,
-      manifest: `${ENV === 'production' ? 'manifest.json' : '/assets/manifest.json'}`,
+      manifest: `${ENV === 'production' ? '/manifest.json' : '/assets/manifest.json'}`,
       iconDirectory: `${ENV === 'production' ? '/icons/' : '/assets/icons/'}`,
       minify: {
         collapseWhitespace: true,

@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "www.spencerkline.com",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dashboard -- webpack-dev-server",
@@ -103,6 +103,7 @@
     "apollo-client": "^2.0.1",
     "apollo-link": "^1.0.0",
     "apollo-link-http": "^1.0.0",
+    "lazysizes": "^4.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-apollo": "^2.0.0",
@@ -132,10 +133,7 @@
       "expect": true,
       "fetch": true,
       "Image": true,
-      "getComputedStyle": true,
-      "Element": true,
-      "CharacterData": true,
-      "DocumentType": true
+      "getComputedStyle": true
     }
   }
 }

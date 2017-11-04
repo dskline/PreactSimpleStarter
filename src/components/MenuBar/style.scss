@@ -15,6 +15,6 @@
 }
 @include media($breakpoint-not-small...) {
   #navbar-link-container .active {
-    border-bottom-style: solid; border-bottom-width: 1px;
+    border-bottom: 1px solid;
   }
 }
