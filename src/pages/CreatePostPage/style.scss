@@ -1,0 +1,12 @@
+#create-post-page {
+  min-height: 100vh;
+
+  @include media($breakpoint-not-small...) {
+    background: url("https://res.cloudinary.com/spencerkline/image/upload/blog-bgimage.jpg") fixed left 75% top 1rem;
+    background-size: 100vw;
+
+    #two-column-container {
+      background-color: rgba( 0, 0, 0, .4 );
+    }
+  }
+}

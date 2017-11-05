@@ -20,9 +20,8 @@ export default class HomePageBanner extends React.Component {
     const { orientation } = this.state
     return (
       <div id='home-page-banner'>
-        { !orientation ? null
-          : <LazyImage src={images[orientation]} className='h-100'
-            portraitRotation={orientation === 'portrait' ? '270' : null} />
+        { orientation &&
+          <LazyImage src={images[orientation]} className='h-100' portraitRotation={orientation === 'portrait' ? '270' : null} />
         }
       </div>
     )

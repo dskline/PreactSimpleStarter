@@ -1,4 +1,4 @@
-.lazy-image {
+.dimensional-image {
   position: relative;
   float: left;
   width: 100%;
@@ -8,19 +8,6 @@
     width: 100%;
     position: absolute;
     left: 0;
-    opacity: 0;
-
-    &.lazyloaded {
-      opacity: 1;
-      transition: all 0.3s ease-in;
-    }
-    &.slide-in {
-      top: 15%;
-
-      &.lazyloaded {
-        top: 0;
-      }
-    }
   }
   svg {
     width: 25%;
@@ -31,7 +18,18 @@
     bottom: 0;
     margin: auto;
   }
-  &.br2 img {  // even if the parent div is round, it doesn't hide overflow of the child image
-    border-radius: 0.25rem;
+}
+img.lazyloading {
+  opacity: 0;
+}
+img.lazyloaded {
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+img.slide-in {
+  top: 15%;
+
+  &.lazyloaded {
+    top: 0
   }
 }
