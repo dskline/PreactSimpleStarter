@@ -2,9 +2,7 @@ import React from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
 import DataProvider from './data/DataProvider'
-import HomePage from './pages/HomePage'
-import BlogPage from './pages/BlogPage'
-import CreatePostPage from './pages/CreatePostPage'
+import { HomePage, BlogPage, CreatePostPage } from './pages'
 
 import './style.scss'
 
