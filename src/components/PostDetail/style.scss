@@ -8,26 +8,34 @@
   }
   p code {
     padding: 0.2rem 0.3rem;
-    margin: 0;
     font-size: 85%;
+    margin: 0;
     background-color: rgba(27,31,35,0.05);
     border-radius: 0.25rem;
   }
   pre {
     overflow-x: auto;
     padding: 1rem;
-    font-size: 60%;
     background-color: #f6f8fa;
     border-radius: 0.25rem;
+    line-height: 1.25;
 
-    @include media($breakpoint-not-small...) {
-      font-size: 85%;
+    code {
+      font-size: 70%;
+
+      @include media($breakpoint-not-small...) {
+        font-size: 85%;
+      }
     }
   }
   li {
     padding-bottom: 1rem;
   }
   img {
-    width: 50%;
+    width: 75%;
+
+    @include media($breakpoint-not-small...) {
+      width: 60%;
+    }
   }
 }

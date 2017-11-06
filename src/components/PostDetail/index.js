@@ -26,7 +26,7 @@ export default class PostDetail extends React.Component {
     if (post === undefined) {
       return <div>Post not found</div>
     }
-    const content = post.content instanceof String
+    const content = typeof post.content === 'string'
       ? <div id='post-content' className='mt3 pt3 bt lh-copy' dangerouslySetInnerHTML={{__html: post.content}} />
       : <div id='post-content' className='mt3 pt3 bt lh-copy'>{ post.content }</div>
     return (

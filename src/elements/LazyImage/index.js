@@ -45,7 +45,6 @@ export class LazyImage extends React.Component {
       this.image = this._responsiveImage()
     }
   }
-
   render () {
     const {className, dimension, placeholder, portraitRotation} = this.props
     if (dimension) {
