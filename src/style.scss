@@ -18,6 +18,20 @@
 .bg-secondary {
   background-color: $color-secondary;
 }
+.bg-monument {
+  width: 100vw;
+  min-height: 100vh;
+
+  @include media($breakpoint-not-small...) {
+    background: url("https://res.cloudinary.com/spencerkline/image/upload/blog-bgimage.jpg") fixed left 75% top 1rem;
+    background-size: cover;
+
+    #two-column-container {
+      background-color: rgba( 0, 0, 0, .4 );
+    }
+  }
+}
+
 ul {
   -webkit-padding-start: 1rem;
   padding-left: 10px;

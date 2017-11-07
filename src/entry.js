@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import './config/ieFixes'
+import './config/lazysizes.config'
 import App from './'
 import LoadingScreen from './elements/LoadingScreen'
 

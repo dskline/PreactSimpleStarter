@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import InlineSVG from 'svg-inline-react'
 import Aux from 'react-aux'
-import 'lazysizes'
 
 import Spinner from './spinner.svg'
 import './style.scss'

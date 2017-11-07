@@ -31,7 +31,7 @@
   li {
     padding-bottom: 1rem;
   }
-  img {
+  img, video {
     width: 75%;
 
     @include media($breakpoint-not-small...) {
