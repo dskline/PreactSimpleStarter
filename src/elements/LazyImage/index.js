@@ -76,7 +76,7 @@ export class LazyImage extends React.Component {
       { extension: 'wdp', type: 'image/vnd.ms-photo' },
       { extension: 'jpg', type: 'image/jpg' }
     ]
-    const widths = ['480', '768', '1280', '1920']
+    const widths = ['480', '768', '1080', '1440', '1920']
     const prefix = imageUrlPrefix + (portraitRotation ? '/a_' + portraitRotation : '')
     return (
       <picture>
