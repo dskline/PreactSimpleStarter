@@ -1,0 +1,8 @@
+.toc {
+  border-left: solid white;
+
+  &.active {
+    border-left-color: $color-primary;
+    color: $color-primary;
+  }
+}
