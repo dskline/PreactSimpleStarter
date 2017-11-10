@@ -10,9 +10,10 @@ export default class Video extends React.Component {
   render () {
     const { src } = this.props
     return (
-      <video autoPlay loop preload='auto'>
-        <source src={videoUrlPrefix + src + '_webm.webm'} type='video/webm' />
-        <source src={videoUrlPrefix + src + '_mp4.mp4'} type='video/mp4' />
+      <video autoPlay loop muted playsInline controls preload='auto'>
+        <source src={videoUrlPrefix + src + '.webm'} type='video/webm' />
+        <source src={videoUrlPrefix + src + '.mp4'} type='video/mp4' />
+        <source src={videoUrlPrefix + src + '.ogv'} type='video/ogg' />
       </video>
     )
   }
