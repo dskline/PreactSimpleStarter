@@ -8,6 +8,7 @@ import PostDetail from 'src/components/PostDetail'
 import { LazyImage } from 'src/elements/LazyImage'
 import Video from 'src/elements/Video'
 
+import './style.scss'
 import 'src/components/MenuBar/themes/white.scss'
 
 export default class CreatePostPage extends React.Component {
@@ -25,8 +26,11 @@ export default class CreatePostPage extends React.Component {
   }
   render () {
     return (
-      <SidebarTemplate id='create-post-page' className='bg-monument bg-white-10 pt6' menuClass='bg-white shadow-3'
+      <SidebarTemplate id='create-post-page' className='bg-white-10 pt6' menuClass='bg-white shadow-3'
         sidebarComponent={<CreatePostSidebar />}>
+        <div className='bg-image'>
+          <LazyImage src={'blog-bgimage'} className='bg-monument' />
+        </div>
         <textarea placeholder={'## Put your markdown here'} value={this.state.markdown} onChange={this.postTextChanged} />
         <div className='bg-white pv4-l ph5-l br2 shadow-3'>
           { this.state.post.content &&

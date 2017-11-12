@@ -18,16 +18,30 @@
 .bg-secondary {
   background-color: $color-secondary;
 }
-.bg-monument {
-  width: 100vw;
-  min-height: 100vh;
+.bg-image {
+  z-index: -1;
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
 
-  @include media($breakpoint-not-small...) {
-    background: url("https://res.cloudinary.com/spencerkline/image/upload/blog-bgimage.jpg") fixed left 75% top 1rem;
-    background-size: cover;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
 
-    #two-column-container {
-      background-color: rgba( 0, 0, 0, .4 );
+    &.bg-monument {
+      top: 9vw;
+
+      @include media($breakpoint-large...) {
+        top: calc(9vw + (100vw - #{$maxTabletWidthEm + 'em'}) * 0.3 - 12vh);
+      }
     }
   }
 }
