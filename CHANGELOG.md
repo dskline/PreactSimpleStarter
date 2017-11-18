@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.3.0 / 2017-11-18
+
+#### Features
+
+* Table of Contents on the [Home Page](https://www.spencerkline.com)
+* Create Post Page added for ease of testing new posts
+* Parse blog posts as markdown instead of HTML (uses marksy converter)
+* Performance enhancements
+    * Video support added on blog posts as alternative for heavy GIF
+    * Better image loading on blog posts (responsive sizes)
+    * Dynamic imports and code splitting
+
+#### Fixes
+
+* Blog page style improvements (Safari background and remove sidebar on medium-size screens)
+* Home page resizing background issue
+
+
 ## v1.2.8 / 2017-11-02
 
 * Responsive images with lazysizes
