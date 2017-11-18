@@ -21,11 +21,11 @@ export default class SidebarTemplate extends React.Component {
     return (
       <div id={id} className={className}>
         <MenuBar className={menuClass} />
-        <div id='two-column-container' className={'min-vh-100 bg-white-40 flex flex-row mh3 mh4-m mh6-l br3-ns'}>
-          <div id='content' className='inline-flex flex-column w-100 w-two-thirds-ns pa3'>
+        <div id='two-column-container' className={'min-vh-100 bg-white-40 flex flex-row mh3 mh5-m mh6-l br3-ns'}>
+          <div id='content' className='inline-flex flex-column w-100 w-two-thirds-l pa3'>
             {children}
           </div>
-          <div id='sidebar' className='dn inline-flex-ns w-third'>
+          <div id='sidebar' className='dn inline-flex-l w-third'>
             {sidebarComponent}
           </div>
         </div>

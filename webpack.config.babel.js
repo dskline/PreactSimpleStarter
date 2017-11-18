@@ -21,7 +21,8 @@ const extractSass = new ExtractTextPlugin({
 module.exports = {
   entry: {
     app: ['babel-polyfill', './src/entry.js'],
-    react: ['react', 'react-dom', 'react-router', 'react-router-dom'],
+    react: ['react', 'react-router', 'react-router-dom'],
+    reactdom: ['react-dom'],
     apollo: ['apollo-client', 'apollo-cache-inmemory', 'apollo-link-http', 'apollo-cache', 'react-apollo', 'whatwg-fetch']
   },
 
@@ -107,7 +108,7 @@ module.exports = {
   plugins: [
     extractSass,
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['react', 'apollo'],
+      names: ['app', 'react', 'reactdom', 'apollo'],
       minChunks: Infinity
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
