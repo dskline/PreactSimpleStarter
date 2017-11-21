@@ -24,7 +24,7 @@ export default class TableOfContents extends React.Component {
   render () {
     return (
       <div className='flex pb7'>
-        <div className='w-100 w-70-ns'>
+        <div className='w-100 w-75-l'>
           { this.props.children.map((node, index) => {
             return (
               <VisibilitySensor
@@ -36,7 +36,7 @@ export default class TableOfContents extends React.Component {
             )
           }) }
         </div>
-        <div className={'dn dib-ns w-30 h-100 right-0 pt6 pl3 pl5-l' + (this.props.fixedSidebar ? ' fixed top-0' : '')}>
+        <div className={'dn dib-l w-25 h-100 right-0 pt6 pl3 pl5-l' + (this.props.fixedSidebar ? ' fixed top-0' : '')}>
           { this._sidebar() }
         </div>
       </div>

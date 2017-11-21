@@ -1,5 +1,11 @@
 @import 'elements/LoadingScreen/style';
 
+.color-primary {
+  color: $color-primary;
+}
+.color-primary-dark {
+  color: $color-primary-dark;
+}
 .bg-svg {
   background: $background-svg;
 }
