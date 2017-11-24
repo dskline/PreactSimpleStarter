@@ -4,6 +4,8 @@ import VisibilitySensor from 'react-visibility-sensor'
 
 import './style.scss'
 
+const halfViewportHeight = window.innerHeight * 0.5
+
 export default class TableOfContents extends React.Component {
   state = {
     activeNode: 0
@@ -29,7 +31,8 @@ export default class TableOfContents extends React.Component {
             return (
               <VisibilitySensor
                 key={index}
-                minTopValue={window.innerHeight * 0.4}
+                partialVisibility
+                offset={{top: halfViewportHeight, bottom: halfViewportHeight}}
                 onChange={(e) => this._setActiveNode(e, index)}>
                 { node }
               </VisibilitySensor>
@@ -43,6 +46,7 @@ export default class TableOfContents extends React.Component {
     )
   }
   _setActiveNode (isVisible, index) {
+    console.log(index + ': ' + isVisible)
     if (isVisible) {
       this.setState({ activeNode: index })
     }

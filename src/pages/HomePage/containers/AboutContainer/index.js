@@ -18,15 +18,15 @@ export default class AboutContainer extends React.Component {
   }
   render () {
     return (
-      <div id={this.props.id} className='pv5 ph4 pr0-ns pl6-l'>
-        <div className='flex items-baseline justify-center w-90 ph2 mb4'>
+      <div id={this.props.id} className='flex flex-column items-center justify-center min-vh-100 pv5 ph4 pr0-ns pl6-l'>
+        <div className='flex items-baseline justify-center w-90 ph2 pb3 mb4'>
           <div className='w-30 w-20-l'>
             <LazyImage src='about_me_xkcd' />
           </div>
-          <span className='nowrap ml4 ml5-l f3 f2-ns bodoni ttu color-primary b'>{this.props.title}</span>
+          <span className='nowrap ml4 ml5-l f2 f1-ns playfair color-primary b'>{this.props.title}</span>
         </div>
         <div className='flex flex-column lh-copy f4-l'>
-          { this._bullet('Full stack developer with interests in UX and scalable web applications', TechIcon, 'w-60') }
+          { this._bullet('A full stack developer with interests in UX and scalable web applications', TechIcon, 'w-60') }
           { this._bullet('Graduated from Virginia Tech with a Bachelor\'s Degree in Computer Science', GraduationIcon, 'w-60') }
           { this._bullet('Four years of professional experience in the District of Columbia', CapitolIcon, 'w-50') }
           { this._bullet('Enjoys learning about the latest development tools and technologies', BookIcon, 'w-50') }

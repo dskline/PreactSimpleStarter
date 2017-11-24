@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.2 / 2017-11-24
+
+* Finish the home page content
+
 ## v1.3.1 / 2017-11-20
 
 * Added another section to the home page.

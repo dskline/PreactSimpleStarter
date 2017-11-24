@@ -7,6 +7,10 @@ import TableOfContents from 'src/components/TableOfContents'
 import HomePageBanner from './containers/HomePageBanner'
 import AboutContainer from './containers/AboutContainer'
 import ThisWebsiteContainer from './containers/ThisWebsiteContainer'
+import OtherProjectsContainer from './containers/OtherProjectsContainer'
+import ContactContainer from './containers/ContactContainer'
+
+import './style.scss'
 
 export default class HomePage extends React.Component {
   state = {
@@ -21,8 +25,8 @@ export default class HomePage extends React.Component {
         <TableOfContents fixedSidebar={!this.state.bannerInView}>
           <AboutContainer id='about-me' />
           <ThisWebsiteContainer id='this-website' />
-          <AboutContainer id='other-projects' />
-          <AboutContainer id='contact' />
+          <OtherProjectsContainer id='other-projects' />
+          <ContactContainer id='contact' />
         </TableOfContents>
       </HeroTemplate>
     )
