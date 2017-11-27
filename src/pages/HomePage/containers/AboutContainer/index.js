@@ -11,38 +11,63 @@ import TechIcon from 'svg-icon/dist/trimmed-svg/material/devices-other.svg'
 export default class AboutContainer extends React.Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    theme: PropTypes.shape({
+      containerClass: PropTypes.string,
+      titleClass: PropTypes.string
+    })
   }
   static defaultProps = {
     title: 'About Me'
   }
   render () {
+    const {id, title, theme} = this.props
     return (
-      <div id={this.props.id} className='flex flex-column items-center justify-center min-vh-100 pv5 ph4 pr0-ns pl6-l'>
+      <div id={id} className={theme.containerClass}>
         <div className='flex items-baseline justify-center w-90 ph2 pb3 mb4'>
           <div className='w-30 w-20-l'>
             <LazyImage src='about_me_xkcd' />
           </div>
-          <span className='nowrap ml4 ml5-l f2 f1-ns playfair color-primary b'>{this.props.title}</span>
+          <span className={theme.titleClass}>
+            {title}
+          </span>
         </div>
         <div className='flex flex-column lh-copy f4-l'>
-          { this._bullet('A full stack developer with interests in UX and scalable web applications', TechIcon, 'w-60') }
-          { this._bullet('Graduated from Virginia Tech with a Bachelor\'s Degree in Computer Science', GraduationIcon, 'w-60') }
-          { this._bullet('Four years of professional experience in the District of Columbia', CapitolIcon, 'w-50') }
-          { this._bullet('Enjoys learning about the latest development tools and technologies', BookIcon, 'w-50') }
+          <BulletItem icon={TechIcon} width='w-60'>
+            { 'A full stack developer with interests in UX and scalable web applications' }
+          </BulletItem>
+          <BulletItem icon={GraduationIcon} width='w-60'>
+            { 'Graduated from Virginia Tech with a Bachelor\'s Degree in Computer Science' }
+          </BulletItem>
+          <BulletItem icon={CapitolIcon} width='w-50'>
+            { 'Four years of professional experience in the District of Columbia' }
+          </BulletItem>
+          <BulletItem icon={BookIcon} width='w-50'>
+            { 'Enjoys learning about the latest development tools and technologies' }
+          </BulletItem>
         </div>
       </div>
     )
   }
-  _bullet (label, svg, size) {
+}
+class BulletItem extends React.Component {
+  static propTypes = {
+    icon: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired
+  }
+  render () {
+    const {icon, width, children} = this.props
     return (
       <div className='flex mv2'>
         <div className='w2'>
-          <div className={'center mt1 mt0-l ' + size}>
-            <InlineSVG src={svg} />
+          <div className={'center mt1 mt0-l ' + width}>
+            <InlineSVG src={icon} />
           </div>
         </div>
-        <div className='w-90 pl3'>{ label }</div>
+        <div className='w-90 pl3'>
+          { children }
+        </div>
       </div>
     )
   }

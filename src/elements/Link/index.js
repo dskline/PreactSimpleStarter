@@ -11,7 +11,10 @@ export default class Link extends React.Component {
     active: PropTypes.string
   }
   static defaultProps = {
-    style: {color: 'inherit', textDecoration: 'none'}
+    style: {
+      color: 'inherit',
+      textDecoration: 'none'
+    }
   }
   render () {
     const { children, url, active, ...attrs } = this.props

@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.3.3 / 2017-11-27
+
+Lots of code clean-up
+
+* Remove constructors in favor of state = { ... }
+* Break down lines greater than 180 chars
+* Separate inline arrow functions so they aren't created every time
+* Make Table of Contents' children more DRY (reuse classNames)
+* Menu themes should now stay in component scope as JS objects, rather than handled via CSS classes
+
 ## v1.3.2 / 2017-11-24
 
 * Finish the home page content

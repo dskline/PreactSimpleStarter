@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'react-apollo'
 
 import PostDetail from 'src/components/PostDetail'
-import { graphql } from 'react-apollo'
+
 import query from './postByTitleHtml.graphql'
 
 @graphql(query, {

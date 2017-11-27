@@ -12,8 +12,7 @@
     path {
       stroke: black;
     }
-    border-color: black;
-    border-width: .125rem;
+    border: .125rem black;
   }
 
   @include media($breakpoint-small...) {

@@ -11,21 +11,17 @@ import GithubIcon from './icons/github.svg'
 import BlogIcon from './icons/blog.svg'
 
 export default class MenuBar extends React.Component {
+  state = {
+    isExpanded: false
+  }
   static propTypes = {
-    className: PropTypes.string
-  }
-  static defaultProps = {
-    className: ''
-  }
-  constructor (props) {
-    super(props)
-    this.state = {
-      isExpanded: false
-    }
+    theme: PropTypes.shape({
+      className: PropTypes.string
+    })
   }
   render () {
     return (
-      <div id='menu-bar' className={this.props.className + ' flex w-100 fixed top-0 fw5 avenir'}>
+      <div id='menu-bar' className={this.props.theme.className + ' flex w-100 fixed top-0 fw5 avenir'}>
         {/* Menu Bar Left */}
         <Link id='logo-container' url='/' className='flex ml3 ml4-l' aria-label='logo-home'>
           <div id='logo-icon' className='mv1 mr3 ph2 ba bw1'>
@@ -43,26 +39,36 @@ export default class MenuBar extends React.Component {
             <div className='hamburger-piece shadow-3' />
           </div>
           <div id='navbar-link-container' className='f5 f4-l mr4-l pb1-ns'>
-            {[
-              this._link('Home', HomeIcon, '/'),
-              this._link('Blog', BlogIcon, '/blog'),
-              this._link('GitHub', GithubIcon, 'https://www.github.com/dskline')
-            ]}
+            { this._link('Home', HomeIcon, '/') }
+            { this._link('Blog', BlogIcon, '/blog') }
+            { this._link('GitHub', GithubIcon, 'https://www.github.com/dskline') }
           </div>
         </nav>
       </div>
     )
   }
+  handleExpanded = (e) => {
+    this.setState({ isExpanded: e.target.checked })
+  }
   _menuToggle (id) {
     return (
-      <input id={id} type='checkbox' className='dn-ns' aria-label={id}
-        checked={this.state.isExpanded} onChange={(e) => { this.setState({ isExpanded: e.target.checked }) }} />
+      <input
+        id={id}
+        type='checkbox'
+        className='dn-ns'
+        aria-label={id}
+        checked={this.state.isExpanded}
+        onChange={this.handleExpanded}
+      />
     )
   }
   _link (title, icon, location) {
     return (
-      <Link key={title} url={location} className='pv1-ns mh3-ns' active='bb-ns'>
-        <InlineSVG src={icon} className='mr3 dn-ns' />{title}
+      <Link url={location} className='pv1-ns mh3-ns' active='bb-ns'>
+        <InlineSVG
+          src={icon}
+          className='mr3 dn-ns'
+        />{title}
       </Link>
     )
   }

@@ -5,11 +5,8 @@ import { LazyImage } from 'src/elements/LazyImage'
 import { maxPhoneWidth } from './style.scss'
 
 export default class HomePageBanner extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      orientation: null
-    }
+  state = {
+    orientation: null
   }
   render () {
     const { orientation } = this.state
@@ -21,19 +18,17 @@ export default class HomePageBanner extends React.Component {
     )
   }
   componentDidMount () {
-    this._setOrientationByScreenWidth()
-    window.addEventListener('resize', () => { this._setOrientationByScreenWidth() })
+    this.handleOrientation()
+    window.addEventListener('resize', this.handleOrientation)
   }
   componentWillUnmount () {
-    window.removeEventListener('resize', () => { this._setOrientationByScreenWidth() })
+    window.removeEventListener('resize', this.handleOrientation)
   }
-  _setOrientationByScreenWidth () {
-    const newOrientation = this._screenWidthInEm() > maxPhoneWidth ? 'landscape' : 'portrait'
+  handleOrientation = () => {
+    const screenWidth = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size'])
+    const newOrientation = screenWidth > maxPhoneWidth ? 'landscape' : 'portrait'
     if (this.state.orientation !== newOrientation) {
       this.setState({ orientation: newOrientation })
     }
-  }
-  _screenWidthInEm () {
-    return window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size'])
   }
 }

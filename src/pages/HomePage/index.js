@@ -19,10 +19,10 @@ export default class HomePage extends React.Component {
   render () {
     return (
       <HeroTemplate>
-        <VisibilitySensor partialVisibility scrollCheck scrollDelay={150} onChange={(e) => this._setBannerInView(e)}>
+        <VisibilitySensor partialVisibility scrollCheck scrollDelay={150} onChange={this.handleBannerInView}>
           <HomePageBanner />
         </VisibilitySensor>
-        <TableOfContents fixedSidebar={!this.state.bannerInView}>
+        <TableOfContents isSidebarFixed={!this.state.bannerInView}>
           <AboutContainer id='about-me' />
           <ThisWebsiteContainer id='this-website' />
           <OtherProjectsContainer id='other-projects' />
@@ -31,7 +31,7 @@ export default class HomePage extends React.Component {
       </HeroTemplate>
     )
   }
-  _setBannerInView (isVisible) {
+  handleBannerInView = (isVisible) => {
     this.setState({ bannerInView: isVisible })
   }
 }

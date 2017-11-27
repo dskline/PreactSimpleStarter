@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import VisibilitySensor from 'react-visibility-sensor'
 
 import MenuBar from 'src/components/MenuBar'
-import 'src/components/MenuBar/themes/primary.scss'
-import './style.scss'
+import { primary, transparent } from 'src/components/MenuBar/themes'
 
 export default class HeroTemplate extends React.Component {
+  state = {
+    isAtTopOfPage: false
+  }
   static propTypes = {
     children: PropTypes.node.isRequired,
     id: PropTypes.string
@@ -14,19 +16,15 @@ export default class HeroTemplate extends React.Component {
   static defaultProps = {
     id: 'app-container'
   }
-  constructor (props) {
-    super(props)
-    this.state = {
-      isAtTopOfPage: false
-    }
-  }
-
   render () {
     const {id, children} = this.props
     return (
       <div id={id} className='bg-white'>
-        <MenuBar className={this.state.isAtTopOfPage ? 'bg-transparent' : 'bg-primary-dark-opaque shadow-3'} />
-        <VisibilitySensor onChange={(e) => this._setIsTopOfPageVisible(e)} partialVisibility='top' offset={{top: -30}}>
+        <MenuBar theme={this.state.isAtTopOfPage ? transparent : primary} />
+        <VisibilitySensor
+          partialVisibility='top'
+          offset={{top: -30}}
+          onChange={this.handleTopOfPageVisibility}>
           <div id='content'>
             {children}
           </div>
@@ -34,8 +32,7 @@ export default class HeroTemplate extends React.Component {
       </div>
     )
   }
-
-  _setIsTopOfPageVisible (isVisible) {
+  handleTopOfPageVisibility = (isVisible) => {
     this.setState({ isAtTopOfPage: isVisible })
   }
 }

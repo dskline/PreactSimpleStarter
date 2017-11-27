@@ -23,12 +23,19 @@ export default class PostSummary extends React.Component {
       <Link url={'/blog/' + post.titleHtml} className='w-100'>
         <div className='post-summary-container bg-white flex flex-column-reverse flex-column-ns mb3 mb4-ns br2 shadow-3'>
           <div className='blog-header pa3 pb4'>
-            <div className='f6 mb1'>{timeSince(new Date(post.createdAt))}</div>
-            <div className='f4 f3-l b'>{post.title}</div>
+            <div className='f6 mb1'>
+              { timeSince(new Date(post.createdAt)) }
+            </div>
+            <div className='f4 f3-l b'>
+              { post.title }
+            </div>
           </div>
           <div className='post-summary-desc inline-flex ph3-ns pb3-ns'>
             <div className='post-summary-image dib w-100 w-30-ns'>
-              <LazyImage src={post.titleImageUrl} dimension={Dimensions.wide} className='slide-in' />
+              <LazyImage
+                src={post.titleImageUrl}
+                dimension={Dimensions.wide}
+                className='slide-in' />
             </div>
             <div className='dn dib-ns h3-m w-70 pl3 f6 overflow-y-hidden lh-copy'>
               {post.description}

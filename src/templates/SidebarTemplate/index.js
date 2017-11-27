@@ -7,21 +7,14 @@ export default class SidebarTemplate extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     sidebarComponent: PropTypes.element.isRequired,
-    className: PropTypes.string,
-    id: PropTypes.string,
-    menuClass: PropTypes.string
-  }
-  static defaultProps = {
-    id: 'app-container',
-    className: '',
-    menuClass: ''
+    theme: PropTypes.object.isRequired
   }
   render () {
-    const { id, className, menuClass, children, sidebarComponent } = this.props
+    const { theme, children, sidebarComponent } = this.props
     return (
-      <div id={id} className={className}>
-        <MenuBar className={menuClass} />
-        <div id='two-column-container' className={'min-vh-100 bg-white-40 flex flex-row mh3 mh5-m mh6-l br3-ns'}>
+      <div id='sidebar-template' className='pt6'>
+        <MenuBar theme={theme.menu} />
+        <div id='two-column-container' className='flex flex-row min-vh-100 mh3 mh5-m mh6-l br3-ns'>
           <div id='content' className='inline-flex flex-column w-100 w-two-thirds-l pa3'>
             {children}
           </div>

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 import infiniteScroll from 'src/data/pagination/infiniteScroll'
 import query from './blogPosts.graphql'
-
 import PostSummary from './PostSummary'
 
 @infiniteScroll(query, 10)
