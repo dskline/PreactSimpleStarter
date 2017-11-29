@@ -22,7 +22,7 @@ export default class HomePage extends React.Component {
         <VisibilitySensor partialVisibility scrollCheck scrollDelay={150} onChange={this.handleBannerInView}>
           <HomePageBanner />
         </VisibilitySensor>
-        <TableOfContents isSidebarFixed={!this.state.bannerInView}>
+        <TableOfContents sidebarFixed={!this.state.bannerInView}>
           <AboutContainer id='about-me' />
           <ThisWebsiteContainer id='this-website' />
           <OtherProjectsContainer id='other-projects' />

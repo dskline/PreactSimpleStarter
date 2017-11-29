@@ -20,7 +20,7 @@ export default class PostDetail extends React.Component {
     post: PropTypes.shape({
       createdAt: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      titleImageUrl: PropTypes.string
+      titleImageUrl: PropTypes.string.isRequired
     })
   }
   render () {
@@ -32,11 +32,16 @@ export default class PostDetail extends React.Component {
       <div>
         {post.titleImageUrl &&
           <Link url='/blog'>
-            <LazyImage src={post.titleImageUrl} className='br2 mb4' dimension={Dimensions.wide} />
+            <LazyImage
+              src={post.titleImageUrl}
+              className='br2 mb4'
+              dimension={Dimensions.wide} />
           </Link>
         }
         <div className='pa4 pa0-l'>
-          <div className='mb1 f3 b lh-title'>{ post.title }</div>
+          <div className='mb1 f3 b lh-title'>
+            { post.title }
+          </div>
           <div className='pv2 i'>
             { new Date(post.createdAt).toLocaleDateString('en-us', dateFormat) }
           </div>

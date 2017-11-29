@@ -28,11 +28,6 @@ export class LazyImage extends React.Component {
   state = {
     isLoading: true
   }
-  static defaultProps = {
-    alt: '',
-    className: '',
-    placeholder: <InlineSVG src={Spinner} raw={Element.prototype.hasOwnProperty('remove')} />
-  }
   static propTypes = {
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
@@ -40,6 +35,11 @@ export class LazyImage extends React.Component {
     dimension: PropTypes.instanceOf(Dimension),
     placeholder: PropTypes.node,
     portraitRotation: PropTypes.string
+  }
+  static defaultProps = {
+    alt: '',
+    className: '',
+    placeholder: <InlineSVG src={Spinner} />
   }
   render () {
     const {className, dimension, placeholder, portraitRotation} = this.props

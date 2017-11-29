@@ -18,10 +18,10 @@ export default class TableOfContents extends React.Component {
           id: PropTypes.string.isRequired
         })
       })),
-    isSidebarFixed: PropTypes.bool
+    sidebarFixed: PropTypes.bool
   }
   static defaultProps = {
-    isSidebarFixed: false
+    sidebarFixed: false
   }
   render () {
     return (
@@ -32,7 +32,7 @@ export default class TableOfContents extends React.Component {
               key={index}
               partialVisibility
               offset={{top: halfViewportHeight, bottom: halfViewportHeight}}
-              onChange={(e) => this.handleVisibleNode(e, index)}>
+              onChange={(isVisible) => this.handleVisibleNode(index, isVisible)}>
               {
                 React.cloneElement(node, {
                   theme: {
@@ -45,21 +45,25 @@ export default class TableOfContents extends React.Component {
             </VisibilitySensor>
           ) }
         </div>
-        <div className={'dn dib-l w-25 h-100 right-0 pt6 pl3 pl5-l' + (this.props.isSidebarFixed ? ' fixed top-0' : '')}>
+        <div
+          id='toc-sidebar'
+          className={'dn dib-l w-25 h-100 right-0 pt6 pl3 pl5-l' + (this.props.sidebarFixed ? ' fixed top-0' : '')}>
           { this._sidebar() }
         </div>
       </div>
     )
   }
-  handleVisibleNode = (isVisible, index) => {
-    if (isVisible) {
+  handleVisibleNode = (index, isVisible) => {
+    if (isVisible && this.state.visibleNode !== index) {
       this.setState({ visibleNode: index })
     }
   }
   _sidebar () {
     return this.props.children.map((node, index) =>
-      <div key={index + 1}
-        className={'bl b--silver toc mv2 truncate' + (this.state.visibleNode === index ? ' active' : '')}>
+      <div
+        key={index + 1}
+        className={'bl b--silver toc-sidebar-item mv2 truncate' +
+          (this.state.visibleNode === index ? ' active' : '')}>
         <div className='dib f3 f2-l pl3 pr2'>
           0{index + 1}
         </div>

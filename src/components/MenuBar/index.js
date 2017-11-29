@@ -21,13 +21,15 @@ export default class MenuBar extends React.Component {
   }
   render () {
     return (
-      <div id='menu-bar' className={this.props.theme.className + ' flex w-100 fixed top-0 fw5 avenir'}>
+      <div id='menu-bar' className={this.props.theme.className}>
         {/* Menu Bar Left */}
         <Link id='logo-container' url='/' className='flex ml3 ml4-l' aria-label='logo-home'>
           <div id='logo-icon' className='mv1 mr3 ph2 ba bw1'>
             <InlineSVG src={Logo} raw={Element.prototype.hasOwnProperty('remove')} />
           </div>
-          <div id='logo-text' className='dn db-ns pv2 mv2 f5 f4-l'>SpencerKline.com</div>
+          <div id='logo-text' className='dn db-ns pv2 mv2 f5 f4-l'>
+            SpencerKline.com
+          </div>
         </Link>
         {/* Menu Bar Right */}
         <nav className='flex items-center ph3 ml-auto'>
@@ -65,10 +67,7 @@ export default class MenuBar extends React.Component {
   _link (title, icon, location) {
     return (
       <Link url={location} className='pv1-ns mh3-ns' active='bb-ns'>
-        <InlineSVG
-          src={icon}
-          className='mr3 dn-ns'
-        />{title}
+        <InlineSVG src={icon} className='mr3 dn-ns' />{ title }
       </Link>
     )
   }
