@@ -36,7 +36,7 @@ export default class TableOfContents extends React.Component {
               {
                 React.cloneElement(node, {
                   theme: {
-                    titleClass: 'nowrap ml4 ml5-l f2 f1-ns playfair color-primary b',
+                    titleClass: 'nowrap f2 f1-ns playfair color-primary b',
                     containerClass: 'flex flex-column items-center justify-center min-vh-100 pv5 ph4 ph6-l' +
                       (index % 2 === 1 ? ' bg-light-gray' : '')
                   }

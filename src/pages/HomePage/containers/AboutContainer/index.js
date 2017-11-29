@@ -25,7 +25,7 @@ export default class AboutContainer extends React.Component {
     return (
       <div id={id} className={theme.containerClass}>
         <div className='flex items-baseline justify-center w-90 ph2 pb3 mb4'>
-          <div className='w-30 w-20-l'>
+          <div className='w-30 w-20-l mr4 mr5-l'>
             <LazyImage src='about_me_xkcd' />
           </div>
           <span className={theme.titleClass}>
