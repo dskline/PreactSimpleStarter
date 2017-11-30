@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.3.4 / 2017-11-30
+
+* Homepage layout fixes
+* Language changes
+
 ## v1.3.3 / 2017-11-27
 
 Lots of code clean-up

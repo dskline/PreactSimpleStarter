@@ -37,7 +37,7 @@ export default class TableOfContents extends React.Component {
                 React.cloneElement(node, {
                   theme: {
                     titleClass: 'nowrap f2 f1-ns playfair color-primary b',
-                    containerClass: 'flex flex-column items-center justify-center min-vh-100 pv5 ph4 ph6-l' +
+                    containerClass: 'flex flex-column items-center justify-center min-vh-100 pa5 ph4-m' +
                       (index % 2 === 1 ? ' bg-light-gray' : '')
                   }
                 })
@@ -47,8 +47,11 @@ export default class TableOfContents extends React.Component {
         </div>
         <div
           id='toc-sidebar'
-          className={'dn dib-l w-25 h-100 right-0 pt6 pl3 pl5-l' + (this.props.sidebarFixed ? ' fixed top-0' : '')}>
-          { this._sidebar() }
+          className={'dn flex-l justify-center w-25 h-100 right-0 pt6' +
+            (this.props.sidebarFixed ? ' fixed top-0' : '')}>
+          <span>
+            { this._sidebar() }
+          </span>
         </div>
       </div>
     )

@@ -19,7 +19,7 @@ export default class ThisWebsiteContainer extends React.Component {
     const {id, title, theme} = this.props
     return (
       <div id={id} className={theme.containerClass}>
-        <div className='flex flex-column flex-row-ns flex-inline-ns items-baseline-ns justify-center ph2 mb4'>
+        <div className='flex flex-column flex-row-ns flex-inline-ns items-baseline-ns justify-center ph2 mb5'>
           <div>
             <div className={theme.titleClass}>
               {title}
@@ -31,23 +31,23 @@ export default class ThisWebsiteContainer extends React.Component {
             </div>
           </div>
         </div>
-        <div className='flex flex-column flex-row-ns justify-around ph3 ph0-ns lh-copy'>
-          <div>
+        <div className='flex flex-column flex-row-ns justify-around lh-copy'>
+          <div className='w-40-ns'>
             <p>
               { 'Welcome to my home page! This is my own personal playground where I experiment with JavaScript ' +
-              'frameworks and then blog about my experiences and helpful tips developing with them. My belief is ' +
-              'that staying up to date on the latest developer tools is important for building quality code and a ' +
-              'quality product.' }
+              'frameworks, and then blog about my experiences and hopefully provide some helpful tips developing ' +
+              'with them. My belief is that staying up to date on the latest developer tools is important for ' +
+              'maintaining quality products.' }
             </p>
             <ActionLink url='/blog'>
               The Blog
             </ActionLink>
           </div>
-          <div className='w4 w5-l h2' />
-          <div>
+          <div className='dn-ns h2' />
+          <div className='w-40-ns'>
             <p>
-              { 'This portfolio is a Progressive Web App, so it\'s able to function offline with Service Workers. ' +
-              'Google Lighthouse analyzes each page to find areas of improvement in performance over slow internet ' +
+              { 'This website is a Progressive Web App, so it\'s able to function offline with Service Workers. ' +
+              'Google Lighthouse is used to analyze each page and find areas of improvement over slower internet ' +
               'connections. Blog posts are stored and fetched on a GraphQL backend, and all source code is publicly ' +
               'listed on GitHub.' }
             </p>

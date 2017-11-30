@@ -24,7 +24,7 @@ export default class AboutContainer extends React.Component {
     const {id, title, theme} = this.props
     return (
       <div id={id} className={theme.containerClass}>
-        <div className='flex items-baseline justify-center w-90 ph2 pb3 mb4'>
+        <div className='flex items-baseline justify-center w-90'>
           <div className='w-30 w-20-l mr4 mr5-l'>
             <LazyImage src='about_me_xkcd' />
           </div>
@@ -32,7 +32,7 @@ export default class AboutContainer extends React.Component {
             {title}
           </span>
         </div>
-        <div className='flex flex-column lh-copy f4-l'>
+        <div className='flex flex-column pv5 lh-copy f4-l'>
           <BulletItem icon={TechIcon} width='w-60'>
             { 'A full stack developer with interests in UX and scalable web applications' }
           </BulletItem>
