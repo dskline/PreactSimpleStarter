@@ -24,7 +24,7 @@ export const Dimensions = {
   normal: new Dimension(3 / 4)
 }
 
-export class LazyImage extends React.Component {
+export default class LazyImage extends React.Component {
   state = {
     isLoading: true
   }

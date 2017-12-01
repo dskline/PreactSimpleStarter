@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Link from 'src/elements/Link'
-import { LazyImage, Dimensions } from 'src/elements/LazyImage'
+import LazyImage, { Dimensions } from 'src/elements/LazyImage'
 import { timeSince } from 'src/utilities/DateUtils'
 
 import './style.scss'

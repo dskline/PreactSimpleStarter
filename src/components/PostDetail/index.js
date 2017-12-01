@@ -2,7 +2,7 @@ import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
 import marksy from 'marksy'
 
-import { LazyImage, Dimensions } from 'src/elements/LazyImage'
+import LazyImage, { Dimensions } from 'src/elements/LazyImage'
 import Link from 'src/elements/Link'
 import Video from 'src/elements/Video'
 
@@ -26,7 +26,7 @@ export default class PostDetail extends React.Component {
   render () {
     const { post } = this.props
     if (post === undefined) {
-      return <div>Post not found</div>
+      return <div id='post-not-found'>Post not found</div>
     }
     return (
       <div>

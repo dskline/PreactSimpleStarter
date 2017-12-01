@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { LazyImage } from 'src/elements/LazyImage'
+import LazyImage from 'src/elements/LazyImage'
 
 import { maxPhoneWidth } from './style.scss'
 

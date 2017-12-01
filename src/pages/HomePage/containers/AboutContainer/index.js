@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import InlineSVG from 'svg-inline-react'
 
-import { LazyImage } from 'src/elements/LazyImage'
+import LazyImage from 'src/elements/LazyImage'
 import BookIcon from 'svg-icon/dist/trimmed-svg/open/book.svg'
 import CapitolIcon from 'svg-icon/dist/trimmed-svg/game/originals-capitol.svg'
 import GraduationIcon from 'svg-icon/dist/trimmed-svg/entypo/graduation-cap.svg'

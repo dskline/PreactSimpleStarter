@@ -4,7 +4,7 @@ import update from 'immutability-helper'
 import SidebarTemplate from 'src/templates/SidebarTemplate'
 import CreatePostSidebar from './containers/CreatePostSidebar'
 import PostDetail from 'src/components/PostDetail'
-import { LazyImage } from 'src/elements/LazyImage'
+import LazyImage from 'src/elements/LazyImage'
 
 import BlackWhiteTheme from 'src/templates/SidebarTemplate/themes/blackwhite.js'
 

@@ -5,7 +5,7 @@ import SidebarTemplate from 'src/templates/SidebarTemplate'
 import BlogSidebar from './containers/BlogSidebar'
 import PostContainer from './containers/PostContainer'
 import PostDetailContainer from './containers/PostDetailContainer'
-import { LazyImage } from 'src/elements/LazyImage'
+import LazyImage from 'src/elements/LazyImage'
 
 import BlackWhiteTheme from 'src/templates/SidebarTemplate/themes/blackwhite.js'
 
