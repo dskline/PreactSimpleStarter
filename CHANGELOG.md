@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.5 / 2017-12-01
+
+* Fix image loading spinner size
+
 ## v1.3.4 / 2017-11-30
 
 * Homepage layout fixes

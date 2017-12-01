@@ -9,15 +9,6 @@
     position: absolute;
     left: 0;
   }
-  svg {
-    width: 25%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
 }
 img.lazyload, img.lazyloading {
   opacity: 0;
@@ -32,4 +23,13 @@ img.slide-in {
   &.lazyloaded {
     top: 0
   }
+}
+picture + i svg {
+  width: 25%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
