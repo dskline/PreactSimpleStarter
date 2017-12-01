@@ -2,14 +2,14 @@ import React from 'react'
 import { mount } from 'enzyme'
 import sinon from 'sinon'
 
-import { LazyImage, Dimensions } from './index'
+import LazyImage, { Dimensions } from './'
 
 const mockProps = {
   src: 'welcome',
   placeholder: <div className='placeholder' />
 }
 
-describe('LazyImage', () => {
+describe('<LazyImage />', () => {
   test('there are multiple sources and one fallback img', () => {
     const component = mount(<LazyImage {...mockProps} />)
     expect(component.find('source').length).toBeGreaterThan(1)

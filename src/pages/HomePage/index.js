@@ -32,6 +32,8 @@ export default class HomePage extends React.Component {
     )
   }
   handleBannerInView = (isVisible) => {
-    this.setState({ bannerInView: isVisible })
+    if (isVisible !== this.state.bannerInView) {
+      this.setState({ bannerInView: isVisible })
+    }
   }
 }
