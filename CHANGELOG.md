@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.6 / 2017-12-01
+
+* Make blog summary text size a little bigger
+
 ## v1.3.5 / 2017-12-01
 
 * Fix image loading spinner size

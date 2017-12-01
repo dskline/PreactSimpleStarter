@@ -37,7 +37,7 @@ export default class PostSummary extends React.Component {
                 dimension={Dimensions.wide}
                 className='slide-in' />
             </div>
-            <div className='dn dib-ns h3-m w-70 pl3 f6 overflow-y-hidden lh-copy'>
+            <div className='dn dib-ns h3-m w-70 pl3 f5 overflow-y-hidden lh-copy'>
               {post.description}
             </div>
           </div>

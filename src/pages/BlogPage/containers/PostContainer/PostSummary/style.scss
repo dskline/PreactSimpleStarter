@@ -1,6 +1,6 @@
 @mixin line-clamp($lines-to-show) {
   display: -webkit-box;
-  height: (.875rem * 1.5 * $lines-to-show); // Fallback for non-webkit browsers
+  height: (1rem * 1.5 * $lines-to-show); // Fallback for non-webkit browsers
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
