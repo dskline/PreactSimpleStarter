@@ -1,15 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
+import { tocChildPropType } from 'src/components/TableOfContents'
 
 export default class OtherProjectsContainer extends React.Component {
-  static propTypes = {
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    theme: PropTypes.shape({
-      containerClass: PropTypes.string,
-      titleClass: PropTypes.string
-    })
-  }
+  static propTypes = tocChildPropType
   static defaultProps = {
     title: 'Other Projects'
   }

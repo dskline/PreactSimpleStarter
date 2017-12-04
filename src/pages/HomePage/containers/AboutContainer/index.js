@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import InlineSVG from 'svg-inline-react'
 
+import { tocChildPropType } from 'src/components/TableOfContents'
+
 import LazyImage from 'src/elements/LazyImage'
 import BookIcon from 'svg-icon/dist/trimmed-svg/open/book.svg'
 import CapitolIcon from 'svg-icon/dist/trimmed-svg/game/originals-capitol.svg'
@@ -9,14 +11,7 @@ import GraduationIcon from 'svg-icon/dist/trimmed-svg/entypo/graduation-cap.svg'
 import TechIcon from 'svg-icon/dist/trimmed-svg/material/devices-other.svg'
 
 export default class AboutContainer extends React.Component {
-  static propTypes = {
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    theme: PropTypes.shape({
-      containerClass: PropTypes.string,
-      titleClass: PropTypes.string
-    })
-  }
+  static propTypes = tocChildPropType
   static defaultProps = {
     title: 'About Me'
   }

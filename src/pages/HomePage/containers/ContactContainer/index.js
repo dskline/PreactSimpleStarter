@@ -1,21 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import InlineSVG from 'svg-inline-react'
 
+import { tocChildPropType } from 'src/components/TableOfContents'
 import Link from 'src/elements/Link'
 
 import EmailIcon from 'svg-icon/dist/trimmed-svg/material/mail-outline.svg'
 import SlackIcon from 'svg-icon/dist/trimmed-svg/simple/slack.svg'
 
 export default class ContactContainer extends React.Component {
-  static propTypes = {
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    theme: PropTypes.shape({
-      containerClass: PropTypes.string,
-      titleClass: PropTypes.string
-    })
-  }
+  static propTypes = tocChildPropType
   static defaultProps = {
     title: 'Contact Me'
   }

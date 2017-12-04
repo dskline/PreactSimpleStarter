@@ -6,6 +6,14 @@ import './style.scss'
 
 const halfViewportHeight = window.innerHeight * 0.5
 
+export const tocChildPropType = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  theme: PropTypes.shape({
+    containerClass: PropTypes.string,
+    titleClass: PropTypes.string
+  })
+}
 export default class TableOfContents extends React.Component {
   state = {
     visibleNode: 0
@@ -13,10 +21,7 @@ export default class TableOfContents extends React.Component {
   static propTypes = {
     children: PropTypes.arrayOf(
       PropTypes.shape({
-        props: PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          id: PropTypes.string.isRequired
-        })
+        props: PropTypes.shape(tocChildPropType)
       })),
     sidebarFixed: PropTypes.bool
   }

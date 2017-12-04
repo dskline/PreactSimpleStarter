@@ -1,17 +1,10 @@
 import React from 'react'
 
+import { tocChildPropType } from 'src/components/TableOfContents'
 import ActionLink from 'src/elements/Link/ActionLink'
-import PropTypes from 'prop-types'
 
 export default class ThisWebsiteContainer extends React.Component {
-  static propTypes = {
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    theme: PropTypes.shape({
-      containerClass: PropTypes.string,
-      titleClass: PropTypes.string
-    })
-  }
+  static propTypes = tocChildPropType
   static defaultProps = {
     title: 'This Website'
   }

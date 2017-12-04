@@ -4,21 +4,26 @@ import { shallow } from 'enzyme'
 import Link from './'
 import ActionLink from './ActionLink'
 
+const testLink = (jsx) => {
+  return {
+    contains: (test) => {
+      expect(shallow(jsx).find(test).length).toBe(1)
+    }
+  }
+}
+
 describe('<Link />', () => {
   test('internal url returns an NavLink', () => {
-    const component = shallow(<Link url='/' />)
-    expect(component.find('NavLink[to="/"]').length).toBe(1)
+    testLink(<Link url='/' />).contains('NavLink[to="/"]')
   })
 
   test('external url returns a normal anchor tag', () => {
-    const component = shallow(<Link url='https://www.google.com' />)
-    expect(component.find('a[href="https://www.google.com"]').length).toBe(1)
+    testLink(<Link url='https://www.google.com' />).contains('a[href="https://www.google.com"]')
   })
 })
 
 describe('<ActionLink />', () => {
   test('passes props to Link', () => {
-    const component = shallow(<ActionLink url='/' />)
-    expect(component.find('Link[url="/"]').length).toBe(1)
+    testLink(<ActionLink url='/' />).contains('Link[url="/"]')
   })
 })
