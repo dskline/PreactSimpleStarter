@@ -1,8 +1,8 @@
 # Yet Another... Portfolio PWA
 
-[![Build Status](https://img.shields.io/travis/dskline/portfolio/master.svg?maxAge=600)](https://travis-ci.org/dskline/portfolio)
-[![Coverage Status](https://img.shields.io/coveralls/github/dskline/portfolio/master.svg?maxAge=600)](https://coveralls.io/github/dskline/portfolio?branch=master)
-[![Code Climate Badge](https://img.shields.io/codeclimate/maintainability/dskline/portfolio.svg?maxAge=600)](https://codeclimate.com/github/dskline/portfolio/badges)
+[![> Build Status](https://img.shields.io/travis/dskline/portfolio/master.svg?maxAge=600)](https://travis-ci.org/dskline/portfolio)
+[![> Coverage Status](https://img.shields.io/coveralls/github/dskline/portfolio/master.svg?maxAge=600)](https://coveralls.io/github/dskline/portfolio?branch=master)
+[![> Code Climate](https://img.shields.io/codeclimate/maintainability/dskline/portfolio.svg?maxAge=600)](https://codeclimate.com/github/dskline/portfolio/badges)
 
 This portfolio was created as a playground to try out the latest and greatest web technologies: 
 
