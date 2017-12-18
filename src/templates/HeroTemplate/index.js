@@ -23,16 +23,18 @@ export default class HeroTemplate extends React.Component {
         <MenuBar theme={this.state.isAtTopOfPage ? transparent : primary} />
         <VisibilitySensor
           partialVisibility='top'
-          offset={{top: -30}}
+          offset={{ top: -30 }}
           onChange={this.handleTopOfPageVisibility}>
           <div id='content'>
-            {children}
+            { children }
           </div>
         </VisibilitySensor>
       </div>
     )
   }
   handleTopOfPageVisibility = (isVisible) => {
-    this.setState({ isAtTopOfPage: isVisible })
+    if (isVisible !== this.state.isAtTopOfPage) {
+      this.setState({ isAtTopOfPage: isVisible })
+    }
   }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import sinon from 'sinon'
 
-import MockBlogPost from 'src/utilities/mock/data/MockBlogPost'
+import MockBlogPost from 'src/utilities/test/mock/data/MockBlogPost'
 import PostDetail from './'
 
 describe('<PostDetail />', () => {

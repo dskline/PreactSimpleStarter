@@ -7,7 +7,7 @@ import gql from 'graphql-tag'
 import { MockedProvider } from 'react-apollo/test-utils'
 import { addTypenameToDocument } from 'apollo-utilities'
 
-import createMockData from 'src/utilities/mock/data/createMockData'
+import createMockData from 'src/utilities/test/mock/data/createMockData'
 import infiniteScroll from './infiniteScroll'
 
 class TestableComponent extends React.Component {
