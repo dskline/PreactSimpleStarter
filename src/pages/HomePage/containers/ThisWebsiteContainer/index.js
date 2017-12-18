@@ -6,7 +6,8 @@ import ActionLink from 'src/elements/Link/ActionLink'
 export default class ThisWebsiteContainer extends React.Component {
   static propTypes = tocChildPropType
   static defaultProps = {
-    title: 'This Website'
+    title: 'This Website',
+    theme: {}
   }
   render () {
     const {id, title, theme} = this.props

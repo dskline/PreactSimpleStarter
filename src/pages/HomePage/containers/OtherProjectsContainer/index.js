@@ -5,7 +5,8 @@ import { tocChildPropType } from 'src/components/TableOfContents'
 export default class OtherProjectsContainer extends React.Component {
   static propTypes = tocChildPropType
   static defaultProps = {
-    title: 'Other Projects'
+    title: 'Other Projects',
+    theme: {}
   }
   render () {
     const {id, title, theme} = this.props

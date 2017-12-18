@@ -17,7 +17,7 @@ export default class HomePageBanner extends React.Component {
       </div>
     )
   }
-  componentDidMount () {
+  componentWillMount () {
     this.handleOrientation()
     window.addEventListener('resize', this.handleOrientation)
   }

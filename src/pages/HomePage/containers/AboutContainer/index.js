@@ -1,9 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import InlineSVG from 'svg-inline-react'
 
 import { tocChildPropType } from 'src/components/TableOfContents'
 
+import BulletItem from './BulletItem'
 import LazyImage from 'src/elements/LazyImage'
 import BookIcon from 'svg-icon/dist/trimmed-svg/open/book.svg'
 import CapitolIcon from 'svg-icon/dist/trimmed-svg/game/originals-capitol.svg'
@@ -13,7 +12,8 @@ import TechIcon from 'svg-icon/dist/trimmed-svg/material/devices-other.svg'
 export default class AboutContainer extends React.Component {
   static propTypes = tocChildPropType
   static defaultProps = {
-    title: 'About Me'
+    title: 'About Me',
+    theme: {}
   }
   render () {
     const {id, title, theme} = this.props
@@ -40,28 +40,6 @@ export default class AboutContainer extends React.Component {
           <BulletItem icon={BookIcon} width='w-50'>
             { 'Enjoys learning about the latest development tools and technologies' }
           </BulletItem>
-        </div>
-      </div>
-    )
-  }
-}
-class BulletItem extends React.Component {
-  static propTypes = {
-    icon: PropTypes.string.isRequired,
-    width: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired
-  }
-  render () {
-    const {icon, width, children} = this.props
-    return (
-      <div className='flex mv2'>
-        <div className='w2'>
-          <div className={'center mt1 mt0-l ' + width}>
-            <InlineSVG src={icon} />
-          </div>
-        </div>
-        <div className='w-90 pl3'>
-          { children }
         </div>
       </div>
     )

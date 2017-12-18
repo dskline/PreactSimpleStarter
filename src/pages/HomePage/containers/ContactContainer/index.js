@@ -10,7 +10,8 @@ import SlackIcon from 'svg-icon/dist/trimmed-svg/simple/slack.svg'
 export default class ContactContainer extends React.Component {
   static propTypes = tocChildPropType
   static defaultProps = {
-    title: 'Contact Me'
+    title: 'Contact Me',
+    theme: {}
   }
   render () {
     const {id, title, theme} = this.props

@@ -28,4 +28,11 @@ describe('<HomePage />', () => {
     component.instance().handleBannerInView(false)
     expect(spy.calledOnce).toBe(true)
   })
+
+  test('each child in table of contents has a default title', () => {
+    const component = shallow(<HomePage />)
+    component.find('TableOfContents > [id]').forEach((node) => {
+      expect(node.type().defaultProps.title).toBeDefined()
+    })
+  })
 })
