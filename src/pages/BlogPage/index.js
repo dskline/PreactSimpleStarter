@@ -21,7 +21,7 @@ export default class BlogPage extends React.Component {
     const { params } = this.props.match
     return (
       <SidebarTemplate theme={BlackWhiteTheme} sidebarComponent={<BlogSidebar />}>
-        <div className='bg-image'>
+        <div className='bg-image dn db-ns'>
           <LazyImage src={'blog-bgimage'} className='bg-monument' />
         </div>
         <div className='bg-white w-100 h2 br2 mb4 shadow-3' />

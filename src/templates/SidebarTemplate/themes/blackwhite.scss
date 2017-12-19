@@ -1,3 +1,10 @@
-#sidebar-template #two-column-container {
-  background-color: rgba( 0, 0, 0, .4 );
+@include media($breakpoint-small...) {
+  #sidebar-template {
+    background-color: rgba( 255, 255, 255, .4 );
+  }
+}
+@include media($breakpoint-not-small...) {
+  #sidebar-template #two-column-container {
+    background-color: rgba( 0, 0, 0, .4 );
+  }
 }

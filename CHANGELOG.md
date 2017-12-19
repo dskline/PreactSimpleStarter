@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.7 / 2017-12-18
+
+* Style improvements and minor language changes
+
 ## v1.3.6 / 2017-12-01
 
 * Make blog summary text size a little bigger

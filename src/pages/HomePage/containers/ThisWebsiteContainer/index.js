@@ -30,8 +30,7 @@ export default class ThisWebsiteContainer extends React.Component {
             <p>
               { 'Welcome to my home page! This is my own personal playground where I experiment with JavaScript ' +
               'frameworks, and then blog about my experiences and hopefully provide some helpful tips developing ' +
-              'with them. My belief is that staying up to date on the latest developer tools is important for ' +
-              'maintaining quality products.' }
+              'with them.' }
             </p>
             <ActionLink url='/blog'>
               The Blog
@@ -40,10 +39,9 @@ export default class ThisWebsiteContainer extends React.Component {
           <div className='dn-ns h2' />
           <div className='w-40-ns'>
             <p>
-              { 'This website is a Progressive Web App, so it\'s able to function offline with Service Workers. ' +
-              'Google Lighthouse is used to analyze each page and find areas of improvement over slower internet ' +
-              'connections. Blog posts are stored and fetched on a GraphQL backend, and all source code is publicly ' +
-              'listed on GitHub.' }
+              { 'This website is a "Progressive Web App", or PWA. Google Lighthouse is used to analyze each page and ' +
+              'find areas of improvement over slower internet connections. Blog posts are stored and fetched on a ' +
+              'GraphQL backend, and all source code is publicly listed on GitHub.' }
             </p>
             <ActionLink url='https://www.github.com/dskline/portfolio'>
               The Source Code

@@ -21,7 +21,7 @@ export default class PostSummary extends React.Component {
     const { post } = this.props
     return (
       <Link url={'/blog/' + post.titleHtml} className='w-100'>
-        <div className='post-summary-container bg-white flex flex-column-reverse flex-column-ns mb3 mb4-ns br2 shadow-3'>
+        <div className='post-summary-container bg-white flex flex-column-reverse flex-column-ns mb4 br2 shadow-3'>
           <div className='blog-header pa3 pb4'>
             <div className='f6 mb1'>
               { timeSince(new Date(post.createdAt)) }
@@ -37,7 +37,7 @@ export default class PostSummary extends React.Component {
                 dimension={Dimensions.wide}
                 className='slide-in' />
             </div>
-            <div className='dn dib-ns h3-m w-70 pl3 f5 overflow-y-hidden lh-copy'>
+            <div className='dn dib-ns h3-m w-70 pl4 pr2 f5 overflow-y-hidden lh-copy'>
               {post.description}
             </div>
           </div>

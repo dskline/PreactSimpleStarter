@@ -12,9 +12,9 @@ export default class SidebarTemplate extends React.Component {
   render () {
     const { theme, children, sidebarComponent } = this.props
     return (
-      <div id='sidebar-template' className='pt6'>
+      <div id='sidebar-template' className='pt5 pt6-ns'>
         <MenuBar theme={theme.menu} />
-        <div id='two-column-container' className='flex flex-row min-vh-100 mh3 mh5-m mh6-l br3-ns'>
+        <div id='two-column-container' className='flex flex-row min-vh-100 mh0 mh5-m mh6-l br3-ns bg-black-40-ns'>
           <div id='content' className='inline-flex flex-column w-100 w-two-thirds-l pa3'>
             {children}
           </div>

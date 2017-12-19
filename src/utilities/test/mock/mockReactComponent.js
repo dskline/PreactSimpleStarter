@@ -1,7 +1,7 @@
 import sinon from 'sinon'
 
 export default function mockReactComponent (componentClass) {
-  function stub(method) {
+  function stub (method) {
     return sinon.stub(componentClass.default.prototype, method).returns(null)
   }
   return {

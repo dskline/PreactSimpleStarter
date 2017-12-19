@@ -19,7 +19,7 @@ export default class PostContainer extends React.Component {
       return null
     }
     return (
-      <div id='blog-container' className='flex flex-wrap justify-between'>
+      <div id='blog-container' className='flex flex-wrap justify-between ph2 ph0-ns'>
         {results.map((post, i) =>
           <PostSummary key={i} post={post} />
         )}

@@ -13,6 +13,8 @@
       stroke: black;
     }
     border: .125rem black;
+    width: 2em;
+    height: 2em;
   }
 
   @include media($breakpoint-small...) {
