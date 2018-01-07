@@ -4,6 +4,9 @@ import LazyImage from 'src/elements/LazyImage'
 
 import { maxPhoneWidth } from './style.scss'
 
+export const portraitImage = <LazyImage src='e_contrast:50/hero_portrait' portraitRotation='270' />
+export const landscapeImage = <LazyImage src='hero_landscape' />
+
 export default class HomePageBanner extends React.Component {
   state = {
     orientation: null
@@ -12,8 +15,8 @@ export default class HomePageBanner extends React.Component {
     const { orientation } = this.state
     return (
       <div id='home-page-banner' className='mb5'>
-        { orientation === 'portrait' && <LazyImage src='e_contrast:50/hero_portrait' portraitRotation='270' /> }
-        { orientation === 'landscape' && <LazyImage src='hero_landscape' /> }
+        { orientation === 'portrait' && portraitImage }
+        { orientation === 'landscape' && landscapeImage }
       </div>
     )
   }

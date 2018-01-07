@@ -25,9 +25,10 @@ export default class BlogPage extends React.Component {
           <LazyImage src={'blog-bgimage'} className='bg-monument' />
         </div>
         <div className='bg-white w-100 h2 br2 mb4 shadow-3' />
-        { (params && params.titleHtml)
-          ? <PostDetailContainer titleHtml={params.titleHtml} />
-          : <PostContainer />
+        {
+          (params && params.titleHtml)
+            ? <PostDetailContainer titleHtml={params.titleHtml} />
+            : <PostContainer />
         }
       </SidebarTemplate>
     )

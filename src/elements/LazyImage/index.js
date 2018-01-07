@@ -77,7 +77,7 @@ export default class LazyImage extends React.Component {
             key={extension}
             type={type}
             srcSet={widths.map(width =>
-              `${this.srcPrefix()}/c_scale,w_${width}/${this.props.src}.${extension} ${width}w`
+              `${this.srcPrefix()}/c_scale,w_${width}/${src}.${extension} ${width}w`
             )} />
         ) }
         <img
