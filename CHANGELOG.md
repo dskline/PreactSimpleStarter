@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.3.8 / 2017-1-18
+
+* Add lazysizes extension to detect changes to data-src (for dynamic images)
+* Fix line spacing in blog headers
+
 ## v1.3.7 / 2017-12-18
 
 * Style improvements and minor language changes
