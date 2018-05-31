@@ -1,6 +1,6 @@
 {
   "presets": [
-    [ "env", {
+    [ "@babel/preset-env", {
       "targets": {
         "browsers": [
           "last 2 versions"
@@ -8,8 +8,13 @@
       },
       "useBuiltIns": "usage"
     }],
-    "stage-0",
-    "react"
+    ["@babel/stage-0", {
+      "decoratorsLegacy": true
+    }],
+    "@babel/react"
+  ],
+  "plugins": [
+    "@babel/transform-runtime"
   ],
   "sourceMaps": true
 }

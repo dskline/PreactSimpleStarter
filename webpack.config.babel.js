@@ -1,26 +1,20 @@
 import path from 'path'
 import webpack from 'webpack'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import ManifestPlugin from 'webpack-manifest-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import OfflinePlugin from 'offline-plugin'
 import BrotliPlugin from 'brotli-webpack-plugin'
-import Dashboard from 'webpack-dashboard/plugin'
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 const ENV = process.env.NODE_ENV || 'development'
 
-const extractSass = new ExtractTextPlugin({
-  filename: '[name].[chunkhash:5].css',
-  allChunks: true
-})
-
 module.exports = {
   entry: {
-    app: ['babel-polyfill', './src/entry.js'],
+    app: ['./src/entry.js'],
     react: ['react', 'react-router', 'react-router-dom'],
     reactdom: ['react-dom'],
     apollo: ['apollo-client', 'apollo-cache-inmemory', 'apollo-link-http', 'apollo-cache', 'react-apollo', 'whatwg-fetch']
@@ -46,52 +40,31 @@ module.exports = {
         enforce: 'pre',
         test: /\.js$/,
         exclude: /src|node_modules/,
-        loader: 'source-map-loader'
-      },
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        include: /src/
+        use: ['source-map-loader', 'eslint-loader']
       },
       {
         test: /\.js$/,
-        loaders: [{
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true,
-            presets: ['env', 'stage-0'],
-            plugins: ['transform-async-to-generator']
-          }
-        }],
+        use: ['babel-loader'],
         include: [
-          path.resolve('src')
+          path.resolve(__dirname, 'src')
         ]
       },
       {
         test: /\.(scss|css)$/,
-        use: extractSass.extract({
-          use: [{
-            loader: 'css-loader',
-            options: {
-              sourceMap: true
-            }
-          }, {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true
-            }
-          }, {
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
               data: '@import "config/sass/imports";',
               includePaths: [
                 path.join(__dirname, 'src')
               ]
             }
-          }]
-        }),
+          }
+        ],
         include: path.join(__dirname, 'src')
       },
       {
@@ -106,10 +79,9 @@ module.exports = {
   },
 
   plugins: [
-    extractSass,
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['app', 'react', 'reactdom', 'apollo'],
-      minChunks: Infinity
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
@@ -136,12 +108,6 @@ module.exports = {
       fileName: 'asset-manifest.json'
     })
   ]
-  // Only for development
-    .concat(
-      ENV === 'development'
-        ? [new webpack.HotModuleReplacementPlugin(), new Dashboard()]
-        : []
-    )
   // Only for production
     .concat(
       ENV === 'production'
@@ -158,15 +124,6 @@ module.exports = {
             minify: true,
             ignore: [/(!#loading-screen)/],
             include: ['#loading-screen']
-          }),
-          new webpack.optimize.UglifyJsPlugin({
-            output: {
-              comments: 0
-            },
-            compress: {
-              unused: 1,
-              warnings: 0
-            }
           }),
           new BrotliPlugin({
             asset: '[path].br[query]',
